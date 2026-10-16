@@ -1,0 +1,183 @@
+/* ============ RESERVE PAGE SPECIFIC STYLES ============ */
+
+/* Seating Zone Selector Cards */
+.zone-card {
+  background: var(--card);
+  border-radius: 24px;
+  border: 2px solid var(--border-soft);
+  overflow: hidden;
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.zone-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--chili);
+  box-shadow: 0 20px 42px rgba(36, 22, 8, 0.12);
+}
+
+.zone-img {
+  height: 215px;
+  overflow: hidden;
+  position: relative;
+}
+
+.zone-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.zone-card:hover .zone-img img {
+  transform: scale(1.08);
+}
+
+.zone-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--mustard);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.76rem;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+.zone-body {
+  padding: 24px;
+}
+
+.zone-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.zone-perks span {
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+/* Celebration & Occasion Packages */
+.occasion-pkg-card {
+  background: var(--card);
+  border-radius: 26px;
+  padding: 32px 26px;
+  border: 1px solid var(--border-soft);
+  transition: all 0.35s ease;
+  height: 100%;
+  position: relative;
+}
+
+.occasion-pkg-card.popular-pkg {
+  border: 2px solid var(--chili);
+  background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+}
+
+.occasion-pkg-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(36, 22, 8, 0.11);
+}
+
+.pkg-price {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--chili);
+  margin: 12px 0;
+}
+
+.pkg-price small {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+}
+
+.pkg-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 24px;
+}
+
+.pkg-list li {
+  padding: 7px 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px dashed var(--border-soft);
+}
+
+.pkg-list li i {
+  color: var(--basil);
+}
+
+/* Reservation Policy & Etiquette Steps */
+.policy-box {
+  background: rgba(255, 249, 241, 0.08);
+  border: 1px solid rgba(226, 193, 107, 0.3);
+  border-radius: 22px;
+  padding: 26px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.policy-box:hover {
+  background: rgba(255, 249, 241, 0.14);
+  border-color: var(--mustard);
+  transform: translateY(-5px);
+}
+
+.policy-box .p-ico {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--mustard);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+/* Interactive Floor Plan Preview */
+.floorplan-card {
+  background: var(--card);
+  border-radius: 26px;
+  padding: 32px;
+  border: 2px dashed var(--line-gold);
+}
+
+.table-spot {
+  background: var(--paper);
+  border: 2px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.table-spot:hover,
+.table-spot.selected {
+  background: var(--chili);
+  color: #fff;
+  border-color: var(--chili);
+  transform: scale(1.04);
+}
+
+.table-spot:hover h6,
+.table-spot.selected h6,
+.table-spot:hover small,
+.table-spot.selected small {
+  color: #fff !important;
+}

@@ -1,0 +1,205 @@
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a
+          class="brand-logo mb-3"
+          data-nav-link="index.html"
+          href="index.html"
+          style="color: #fff"
+        >
+          <img
+            data-logo-img
+            src="assets/images/logoStackly.webp"
+            alt="Stackly Food & Restaurant Logo"
+          />
+        </a>
+        <p>
+          Artisanal wood-fired pizzas, flame-seared gourmet burgers, and British
+          farm-to-table plates crafted with passion in the heart of Covent
+          Garden, London.
+        </p>
+        <div class="footer-social mt-3">
+          <a href="#" rel="noopener" aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="#" rel="noopener" aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="#" rel="noopener" aria-label="X Twitter"
+            ><i class="bi bi-twitter-x"></i
+          ></a>
+          <a href="#" rel="noopener" aria-label="YouTube"
+            ><i class="bi bi-youtube"></i
+          ></a>
+          <a href="#" rel="noopener" aria-label="WhatsApp"
+            ><i class="bi bi-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Quick Links</h6>
+        <a data-nav-link="index.html" href="index.html" class="f-link">Home</a>
+        <a
+          data-nav-link="pages/about.html"
+          href="pages/about.html"
+          class="f-link"
+          >About Story</a
+        >
+        <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link"
+          >Full Menu</a
+        >
+        <a
+          data-nav-link="pages/gallery.html"
+          href="pages/gallery.html"
+          class="f-link"
+          >Visual Gallery</a
+        >
+        <a
+          data-nav-link="pages/reserve.html"
+          href="pages/reserve.html"
+          class="f-link"
+          >Book A Table</a
+        >
+        <a data-nav-link="pages/blog.html" href="pages/blog.html" class="f-link"
+          >Culinary Journal</a
+        >
+        <a
+          data-nav-link="pages/contact.html"
+          href="pages/contact.html"
+          class="f-link"
+          >Contact Us</a
+        >
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Signatures</h6>
+        <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link"
+          >Wagyu Smash Burgers</a
+        >
+        <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link"
+          >Neapolitan Pizzas</a
+        >
+        <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link"
+          >Buttermilk Chicken</a
+        >
+        <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link"
+          >Truffle &amp; Herb Fries</a
+        >
+        <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link"
+          >Artisan Gelato Shakes</a
+        >
+        <a href="#" class="f-link">Private Dining</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Get In Touch</h6>
+        <div class="f-contact">
+          <i class="bi bi-geo-alt-fill"></i
+          ><span>24 Covent Garden Piazza, London WC2E 8RF, United Kingdom</span>
+        </div>
+        <div class="f-contact">
+          <i class="bi bi-telephone-fill"></i><span>+91 9876543210</span>
+        </div>
+        <div class="f-contact">
+          <i class="bi bi-envelope-fill"></i
+          ><span>hello@stacklyfood.co.uk</span>
+        </div>
+        <div class="f-contact">
+          <i class="bi bi-clock-fill"></i
+          ><span>Mon – Sun: 10:00 AM – 11:30 PM</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2"
+    >
+      <span
+        >© 2026 Stackly Food &amp; Restaurant. Crafted with bold flavour in
+        London, UK.</span
+      >
+      <span>
+        <i class="bi bi-credit-card-2-front me-2" title="Card Payments"></i>
+        <i class="bi bi-paypal me-2" title="PayPal"></i>
+        <i class="bi bi-apple me-2" title="Apple Pay"></i>
+        <i class="bi bi-cash-coin" title="Cash"></i>
+      </span>
+    </div>
+  </div>
+
+  <!-- Scroll to Top & WhatsApp Floating Buttons at Bottom Corner -->
+  <a href="#" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp"
+    ><i class="bi bi-whatsapp"></i
+  ></a>
+  <button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Scroll to top"
+  >
+    <i class="bi bi-arrow-up"></i>
+  </button>
+</footer>
+
+<!-- Cart Offcanvas -->
+<div
+  class="offcanvas offcanvas-end offcanvas-cart"
+  tabindex="-1"
+  id="cartCanvas"
+>
+  <div class="offcanvas-header border-bottom">
+    <h5 class="display-font mb-0">
+      <i class="bi bi-bag-check text-danger me-2"></i>Your Kitchen Order
+    </h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div id="cartItems" class="flex-grow-1">
+      <p class="text-center text-muted mt-5" id="cartEmptyMsg">
+        Your order bag is empty.<br />Add something delicious from our menu!
+      </p>
+    </div>
+    <div class="border-top pt-3 mt-3">
+      <div class="d-flex justify-content-between mb-3">
+        <strong>Estimated Total</strong>
+        <strong id="cartTotal" style="color: var(--chili)">£0.00</strong>
+      </div>
+      <a
+        data-nav-link="pages/reserve.html"
+        href="pages/reserve.html"
+        class="btn-chili w-100 justify-content-center"
+        >Proceed to Checkout <i class="bi bi-arrow-right"></i
+      ></a>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-container">
+  <div
+    id="cartToast"
+    class="toast toast-cart align-items-center text-white border-0"
+    style="background: var(--basil)"
+    role="alert"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        <i
+          class="bi bi-check-circle-fill me-2"
+          style="color: var(--mustard)"
+        ></i
+        ><span id="toastMsg">Added to your order!</span>
+      </div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+</div>

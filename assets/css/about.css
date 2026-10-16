@@ -1,0 +1,227 @@
+/* ============ ABOUT PAGE SPECIFIC STYLES ============ */
+
+/* Story Timeline */
+.timeline-wrap {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--chili),
+    var(--mustard),
+    var(--basil)
+  );
+  transform: translateX(-50%);
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 42px;
+}
+
+.timeline-card {
+  background: var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  padding: 28px;
+  position: relative;
+  transition: all 0.35s ease;
+  box-shadow: 0 12px 30px rgba(36, 22, 8, 0.06);
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--chili);
+  box-shadow: 0 20px 42px rgba(200, 29, 37, 0.14);
+}
+
+.timeline-year {
+  display: inline-block;
+  background: var(--chili);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 5px 16px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+/* Core Philosophy Pillars */
+.pillar-card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 34px 26px;
+  border: 1px solid var(--border-soft);
+  transition: all 0.35s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--chili);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(36, 22, 8, 0.1);
+}
+
+.pillar-card:hover::after {
+  transform: scaleX(1);
+}
+
+.pillar-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--chili);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  transition: all 0.35s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  background: var(--chili);
+  color: #fff;
+  transform: rotate(-8deg);
+}
+
+/* Sourcing Partners & Farm Map Cards */
+.partner-farm-card {
+  background: var(--card);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.partner-farm-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--basil);
+  box-shadow: 0 18px 38px rgba(31, 77, 54, 0.14);
+}
+
+.pfc-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pfc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.partner-farm-card:hover .pfc-img img {
+  transform: scale(1.08);
+}
+
+.pfc-region {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: var(--basil);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.pfc-body {
+  padding: 22px;
+}
+
+/* Awards & Accolades */
+.award-badge-card {
+  background: rgba(255, 249, 241, 0.08);
+  border: 1px solid rgba(226, 193, 107, 0.3);
+  border-radius: 22px;
+  padding: 28px 22px;
+  text-align: center;
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.award-badge-card:hover {
+  background: rgba(255, 249, 241, 0.16);
+  border-color: var(--mustard);
+  transform: translateY(-6px);
+}
+
+.award-ico {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--mustard);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin-bottom: 16px;
+}
+
+.award-year {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--mustard);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+/* Sustainability Metrics */
+.eco-metric-card {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 26px;
+  border-left: 5px solid var(--basil);
+  box-shadow: 0 10px 26px rgba(36, 22, 8, 0.06);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.eco-metric-card:hover {
+  transform: translateX(6px);
+  border-left-color: var(--chili);
+}
+
+.eco-metric-val {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--basil);
+  line-height: 1.1;
+}
+
+@media (max-width: 767.98px) {
+  .timeline-wrap::before {
+    left: 16px;
+  }
+}

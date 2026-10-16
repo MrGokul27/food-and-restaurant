@@ -1,0 +1,188 @@
+/* ============ BLOG PAGE SPECIFIC STYLES ============ */
+
+/* Featured Editorial Spotlight */
+.editorial-hero-card {
+  background: var(--card);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 20px 45px rgba(36, 22, 8, 0.09);
+}
+
+.ehc-img {
+  height: 100%;
+  min-height: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ehc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.editorial-hero-card:hover .ehc-img img {
+  transform: scale(1.06);
+}
+
+.ehc-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--chili);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 6px 16px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.ehc-body {
+  padding: 42px;
+}
+
+.author-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.author-chip img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--mustard);
+}
+
+/* Secret Kitchen Recipes Cards */
+.recipe-vault-card {
+  background: var(--card);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.recipe-vault-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--mustard);
+  box-shadow: 0 20px 40px rgba(36, 22, 8, 0.11);
+}
+
+.rvc-img {
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rvc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.recipe-vault-card:hover .rvc-img img {
+  transform: scale(1.08);
+}
+
+.rvc-time {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(36, 22, 8, 0.85);
+  color: var(--mustard);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.rvc-body {
+  padding: 24px;
+}
+
+/* Culinary Topic Pills */
+.topic-cloud-card {
+  background: var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 22px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.topic-cloud-card:hover {
+  background: var(--chili);
+  color: #fff;
+  border-color: var(--chili);
+  transform: translateY(-5px);
+}
+
+.topic-cloud-card:hover h6,
+.topic-cloud-card:hover span {
+  color: #fff !important;
+}
+
+/* Chef's Masterclass Video Tutorials */
+.tutorial-card {
+  background: rgba(255, 249, 241, 0.08);
+  border: 1px solid rgba(226, 193, 107, 0.3);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--mustard);
+}
+
+.tut-thumb {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+}
+
+.tut-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tut-play {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 48, 31, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tut-play span {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--mustard);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.tutorial-card:hover .tut-play span {
+  background: var(--chili);
+  color: #fff;
+  transform: scale(1.12);
+}

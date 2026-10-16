@@ -1,0 +1,142 @@
+/* ============ CONTACT PAGE SPECIFIC STYLES ============ */
+
+/* Direct Contact Channels */
+.channel-card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 32px 26px;
+  border: 1px solid var(--border-soft);
+  text-align: center;
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.channel-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--chili);
+  box-shadow: 0 20px 42px rgba(200, 29, 37, 0.12);
+}
+
+.channel-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--chili);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  transition: all 0.35s ease;
+}
+
+.channel-card:hover .channel-icon {
+  background: var(--chili);
+  color: #fff;
+  transform: rotate(-6deg) scale(1.06);
+}
+
+/* UK Branches Directory */
+.branch-card {
+  background: var(--card);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.branch-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--mustard);
+  box-shadow: 0 20px 42px rgba(36, 22, 8, 0.11);
+}
+
+.branch-img {
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+}
+
+.branch-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.branch-card:hover .branch-img img {
+  transform: scale(1.08);
+}
+
+.branch-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--basil);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+.branch-body {
+  padding: 24px;
+}
+
+/* Map Frame Container */
+.map-frame-wrap {
+  border-radius: 28px;
+  overflow: hidden;
+  border: 4px solid var(--card);
+  box-shadow: 0 20px 45px rgba(36, 22, 8, 0.14);
+  height: 430px;
+}
+
+.map-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Transport & Parking Guide */
+.transport-card {
+  background: rgba(255, 249, 241, 0.08);
+  border: 1px solid rgba(226, 193, 107, 0.3);
+  border-radius: 22px;
+  padding: 26px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.transport-card:hover {
+  background: rgba(255, 249, 241, 0.15);
+  border-color: var(--mustard);
+  transform: translateY(-5px);
+}
+
+/* FAQ Accordion Custom */
+.faq-accordion .accordion-item {
+  background: var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px !important;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.faq-accordion .accordion-button {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  background: var(--card);
+  padding: 20px 24px;
+  box-shadow: none !important;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  color: var(--chili);
+  background: var(--paper);
+}

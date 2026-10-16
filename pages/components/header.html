@@ -1,0 +1,161 @@
+<!-- Top bar -->
+<div class="topbar d-none d-lg-block">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <span class="topbar-item"
+        ><i class="bi bi-telephone-fill"></i> +91 9876543210</span
+      >
+      <span class="topbar-item"
+        ><i class="bi bi-envelope-fill"></i> hello@stacklyfood.co.uk</span
+      >
+      <span class="topbar-item"
+        ><i class="bi bi-geo-alt-fill"></i> 24 Covent Garden Piazza, London WC2E
+        8RF, UK</span
+      >
+    </div>
+    <div class="d-flex align-items-center">
+      <span class="topbar-item mb-0"
+        ><span class="status-dot"></span> Open Daily: 10:00 AM - 11:30 PM</span
+      >
+      <span>
+        <a href="#" rel="noopener" class="social-link" aria-label="Facebook"
+          ><i class="bi bi-facebook"></i
+        ></a>
+        <a href="#" rel="noopener" class="social-link" aria-label="Instagram"
+          ><i class="bi bi-instagram"></i
+        ></a>
+        <a href="#" rel="noopener" class="social-link" aria-label="X Twitter"
+          ><i class="bi bi-twitter-x"></i
+        ></a>
+        <a href="#" rel="noopener" class="social-link" aria-label="WhatsApp"
+          ><i class="bi bi-whatsapp"></i
+        ></a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="header-spacer" id="headerSpacer"></div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-main" id="mainNav">
+  <div class="container">
+    <a class="brand-logo" data-nav-link="index.html" href="index.html">
+      <img
+        data-logo-img
+        src="assets/images/logoStackly.webp"
+        alt="Stackly Food & Restaurant Logo"
+      />
+    </a>
+    <div class="d-flex align-items-center gap-2 d-lg-none">
+      <a
+        href="#"
+        class="nav-icon-btn"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#cartCanvas"
+        aria-label="View Cart"
+      >
+        <i class="bi bi-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        id="mobileMenuBtn"
+        aria-label="Toggle Menu"
+      >
+        <i class="bi bi-list" style="font-size: 2rem; color: var(--ink)"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse fullscreen-mobile-menu" id="navMenu">
+      <button
+        type="button"
+        class="mobile-menu-close"
+        id="mobileMenuClose"
+        aria-label="Close Menu"
+      >
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="home"
+            data-nav-link="index.html"
+            href="index.html"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="about"
+            data-nav-link="pages/about.html"
+            href="pages/about.html"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="menu"
+            data-nav-link="pages/menu.html"
+            href="pages/menu.html"
+            >Menu</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="gallery"
+            data-nav-link="pages/gallery.html"
+            href="pages/gallery.html"
+            >Gallery</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="reserve"
+            data-nav-link="pages/reserve.html"
+            href="pages/reserve.html"
+            >Reserve</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="blog"
+            data-nav-link="pages/blog.html"
+            href="pages/blog.html"
+            >Blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-custom"
+            data-page="contact"
+            data-nav-link="pages/contact.html"
+            href="pages/contact.html"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <div class="d-flex align-items-center gap-3 mobile-menu-actions">
+        <a
+          href="#"
+          class="nav-icon-btn d-none d-lg-inline-flex"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cartCanvas"
+          aria-label="Shopping Bag"
+        >
+          <i class="bi bi-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <a href="#" class="btn-chili"
+          >Book A Table <i class="bi bi-arrow-up-right"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</nav>

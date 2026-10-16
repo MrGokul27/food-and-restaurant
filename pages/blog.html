@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Culinary Journal | Stackly Food &amp; Restaurant — Recipes, Stories &amp;
+      Notes
+    </title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/blog.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Common Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ============ SECTION 1: PAGE BANNER & BREADCRUMBS ============ -->
+    <section
+      class="page-banner text-center"
+      style="
+        --banner-bg: url(&quot;https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80&quot;);
+      "
+    >
+      <div class="container">
+        <span class="banner-eyebrow">Stories From Our London Pass</span>
+        <h1>The Culinary <em>Journal</em></h1>
+        <p class="banner-desc">
+          Dive into sourdough fermentation guides, dry-aged British beef
+          insights, seasonal farm dispatches, and step-by-step kitchen recipes
+          penned by our Covent Garden chefs.
+        </p>
+        <nav aria-label="breadcrumb">
+          <div class="breadcrumb-pill">
+            <a href="../index.html"
+              ><i class="bi bi-house-door-fill"></i> Home</a
+            >
+            <span class="sep"><i class="bi bi-chevron-right"></i></span>
+            <span class="current">Culinary Journal</span>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: FEATURED EDITORIAL SPOTLIGHT ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="editorial-hero-card" data-aos="zoom-in">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-6">
+              <div class="ehc-img">
+                <span class="ehc-tag">Cover Story · Dough Craft</span>
+                <img
+                  src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=1000&q=80"
+                  alt="Inside Our 48-Hour Sourdough Vault"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="ehc-body">
+                <div class="blog-meta">October 14, 2026 · 6 Min Read</div>
+                <h2 class="mb-3">
+                  Why Wild Starter &amp; British Stoneground Heritage Flour
+                  Changed Our Pizza Forever
+                </h2>
+                <p class="mb-3">
+                  Three years ago, we began blending Italian Tipo 00 flour with
+                  organic stoneground Cotswold heritage wheat and feeding our
+                  mother levain with Kentish apple skins. The transformation in
+                  crust blister, aroma, and lightness surprised even our veteran
+                  pizzaiolos.
+                </p>
+                <div class="author-chip">
+                  <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80"
+                    alt="Elena Rossi"
+                  />
+                  <div>
+                    <strong class="d-block" style="color: var(--ink)"
+                      >Chef Elena Rossi</strong
+                    >
+                    <small class="text-muted"
+                      >Master Pizzaiola, Stackly Covent Garden</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: BROWSE JOURNAL TOPICS ============ -->
+    <section class="section-pad bg-paper">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Explore By Theme</div>
+          <h2 class="section-title">
+            Journal <span class="accent">Categories</span>
+          </h2>
+        </div>
+        <div class="row g-3">
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="topic-cloud-card">
+              <i class="bi bi-fire fs-3 text-danger mb-2 d-block"></i>
+              <h6 class="mb-1">Flame &amp; Grill</h6>
+              <span class="small text-muted">14 Articles</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="topic-cloud-card">
+              <i
+                class="bi bi-hourglass-split fs-3 text-danger mb-2 d-block"
+              ></i>
+              <h6 class="mb-1">Sourdough Lab</h6>
+              <span class="small text-muted">11 Articles</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="topic-cloud-card">
+              <i class="bi bi-tree fs-3 text-danger mb-2 d-block"></i>
+              <h6 class="mb-1">British Farms</h6>
+              <span class="small text-muted">9 Articles</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="topic-cloud-card">
+              <i
+                class="bi bi-journal-bookmark-fill fs-3 text-danger mb-2 d-block"
+              ></i>
+              <h6 class="mb-1">Home Recipes</h6>
+              <span class="small text-muted">18 Articles</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="topic-cloud-card">
+              <i class="bi bi-cup-straw fs-3 text-danger mb-2 d-block"></i>
+              <h6 class="mb-1">Craft Pairings</h6>
+              <span class="small text-muted">7 Articles</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="topic-cloud-card">
+              <i class="bi bi-calendar-event fs-3 text-danger mb-2 d-block"></i>
+              <h6 class="mb-1">London Events</h6>
+              <span class="small text-muted">12 Articles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4: LATEST ARTICLES & STORIES GRID ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Fresh Dispatches</div>
+          <h2 class="section-title">
+            Latest Kitchen <span class="accent">Chronicles</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="blog-card"
+              data-title="How 35-Day Himalayan Salt Dry-Aging Concentrates Wagyu Flavour"
+              data-meta="October 09, 2026 · Butchery"
+              data-img="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=700&q=80"
+              data-body="Inside our humidity-controlled salt chamber, whole Yorkshire beef primals rest for 35 days. As moisture gently evaporates, natural enzymes tenderize the muscle fibres and develop nutty, umami notes reminiscent of aged Parmigiano.|When ground fresh each morning and smashed onto 280°C cast iron, that concentrated beefiness shines through every bite."
+            >
+              <div class="bc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=700&q=80"
+                  alt="Dry-Aging Beef Chamber"
+                />
+              </div>
+              <div class="bc-body">
+                <div>
+                  <div class="blog-meta">October 09, 2026 · Butchery</div>
+                  <h6>
+                    How 35-Day Himalayan Salt Dry-Aging Concentrates Wagyu
+                    Flavour
+                  </h6>
+                </div>
+                <span class="read-more"
+                  >Read Full Story <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+            <div
+              class="blog-card"
+              data-title="The Secret To Triple-Cooked Maris Piper Fries That Stay Crisp"
+              data-meta="October 01, 2026 · Kitchen Science"
+              data-img="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=700&q=80"
+              data-body="Soggy fries are the enemy of great fast food. Our three-stage process starts by simmering hand-cut East Anglian Maris Pipers until the edges ruffle, chilling them on wire racks, blanching in low-temperature rapeseed oil, and finishing at 190°C to order.|Tossed with crushed rosemary and Cornish sea salt, they stay audibly crisp from kitchen pass to doorstep."
+            >
+              <div class="bc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=700&q=80"
+                  alt="Triple-Cooked Maris Piper Fries"
+                />
+              </div>
+              <div class="bc-body">
+                <div>
+                  <div class="blog-meta">
+                    October 01, 2026 · Kitchen Science
+                  </div>
+                  <h6>
+                    The Secret To Triple-Cooked Maris Piper Fries That Stay
+                    Crisp
+                  </h6>
+                </div>
+                <span class="read-more"
+                  >Read Full Story <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+            <div
+              class="blog-card"
+              data-title="Why We Infuse Wildflower Honey With Scotch Bonnet Chilies"
+              data-meta="September 21, 2026 · Condiments"
+              data-img="https://images.unsplash.com/photo-1587049352847-4a222e784d38?auto=format&fit=crop&w=700&q=80"
+              data-body="Sweet heat is all about balance. We warm raw Sussex wildflower honey gently with blistered Scotch bonnet peppers and a splash of cider vinegar for 4 hours.|Drizzled over creamy Pugliese burrata or crispy buttermilk chicken, it wakes up the palate without overwhelming the dish."
+            >
+              <div class="bc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1587049352847-4a222e784d38?auto=format&fit=crop&w=700&q=80"
+                  alt="Scotch Bonnet Hot Honey"
+                />
+              </div>
+              <div class="bc-body">
+                <div>
+                  <div class="blog-meta">September 21, 2026 · Condiments</div>
+                  <h6>
+                    Why We Infuse Wildflower Honey With Scotch Bonnet Chilies
+                  </h6>
+                </div>
+                <span class="read-more"
+                  >Read Full Story <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="240">
+            <div
+              class="blog-card"
+              data-title="A Morning At Wharfedale Pastures: Regenerative Grazing In Action"
+              data-meta="September 12, 2026 · Provenance"
+              data-img="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=700&q=80"
+              data-body="We travelled north to Yorkshire to walk the pastures with third-generation farmer Tom Whitaker. By rotating small herds across clover-rich meadows every 48 hours, soil carbon increases and the cattle thrive naturally.|That stewardship translates directly into marbled, nutrient-dense beef for our Covent Garden grill."
+            >
+              <div class="bc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=700&q=80"
+                  alt="Regenerative Grazing Farm"
+                />
+              </div>
+              <div class="bc-body">
+                <div>
+                  <div class="blog-meta">September 12, 2026 · Provenance</div>
+                  <h6>
+                    A Morning At Wharfedale Pastures: Regenerative Grazing In
+                    Action
+                  </h6>
+                </div>
+                <span class="read-more"
+                  >Read Full Story <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="320">
+            <div
+              class="blog-card"
+              data-title="Pairing London Craft Pale Ales With Wood-Fired Nduja Pizza"
+              data-meta="September 03, 2026 · Drinks"
+              data-img="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=700&q=80"
+              data-body="Spicy Calabrian nduja and rich fior di latte demand a crisp, citrus-forward counterpoint. Our Beverage Curator Julian Mercer shares his top three Bermondsey microbrewery pale ales and non-alcoholic botanical spritzes to elevate pizza night."
+            >
+              <div class="bc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=700&q=80"
+                  alt="Craft Beer & Pizza Pairing"
+                />
+              </div>
+              <div class="bc-body">
+                <div>
+                  <div class="blog-meta">September 03, 2026 · Drinks</div>
+                  <h6>
+                    Pairing London Craft Pale Ales With Wood-Fired Nduja Pizza
+                  </h6>
+                </div>
+                <span class="read-more"
+                  >Read Full Story <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="blog-card"
+              data-title="Spinning Authentic Cornish Gelato For Our Signature Shakes"
+              data-meta="August 25, 2026 · Pastry"
+              data-img="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=700&q=80"
+              data-body="Unlike commercial soft-serve mixes, our shakes begin with slow-churned Cornish clotted cream gelato made with organic Jersey milk and Madagascan vanilla pods.|Blended to order and crowned with handmade honeycomb, it's a dessert in a glass."
+            >
+              <div class="bc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=700&q=80"
+                  alt="Cornish Gelato Churning"
+                />
+              </div>
+              <div class="bc-body">
+                <div>
+                  <div class="blog-meta">August 25, 2026 · Pastry</div>
+                  <h6>
+                    Spinning Authentic Cornish Gelato For Our Signature Shakes
+                  </h6>
+                </div>
+                <span class="read-more"
+                  >Read Full Story <i class="bi bi-arrow-right"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5: UNLOCKED KITCHEN RECIPES VAULT ============ -->
+    <section class="section-pad bg-paper">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Cook Like Stackly At Home</div>
+          <h2 class="section-title">
+            From Our Recipe <span class="accent">Vault</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="recipe-vault-card">
+              <div class="rvc-img">
+                <span class="rvc-time"
+                  ><i class="bi bi-clock me-1"></i>15 Mins</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80"
+                  alt="Signature Smoky Burger Glaze"
+                />
+              </div>
+              <div class="rvc-body">
+                <span class="blog-meta">Condiment Secret</span>
+                <h5>Stackly Smoky Caramelised Shallot Burger Sauce</h5>
+                <p class="mb-0 small">
+                  Whipped egg yolks, roasted garlic confit, smoked paprika,
+                  finely diced cornichons, and aged malt vinegar.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="recipe-vault-card">
+              <div class="rvc-img">
+                <span class="rvc-time"
+                  ><i class="bi bi-clock me-1"></i>25 Mins</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=600&q=80"
+                  alt="Cast Iron Skillet Smash Technique"
+                />
+              </div>
+              <div class="rvc-body">
+                <span class="blog-meta">Home Grill Guide</span>
+                <h5>Achieving Lacy Smash Burger Edges In A Home Skillet</h5>
+                <p class="mb-0 small">
+                  How to pre-heat dry cast iron, ball loose 80/20 chuck mince,
+                  and press firmly with parchment paper.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="recipe-vault-card">
+              <div class="rvc-img">
+                <span class="rvc-time"
+                  ><i class="bi bi-clock me-1"></i>20 Mins</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80"
+                  alt="Salted Honeycomb Crunch"
+                />
+              </div>
+              <div class="rvc-body">
+                <span class="blog-meta">Sweet Finishing Touch</span>
+                <h5>Golden Cornish Sea Salt Honeycomb Cinder</h5>
+                <p class="mb-0 small">
+                  Amber caramel whisked with bicarbonate of soda and flaky sea
+                  salt—the crown jewel of our shakes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6: CHEF MASTERCLASS VIDEO TUTORIALS (BASIL) ============ -->
+    <section class="section-pad bg-basil">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Watch &amp; Learn</div>
+          <h2 class="section-title">
+            Chef Technique <span class="accent">Masterclasses</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="tutorial-card">
+              <div class="tut-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?auto=format&fit=crop&w=600&q=80"
+                  alt="Stretching Neapolitan Dough"
+                />
+                <div
+                  class="tut-play"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  style="cursor: pointer"
+                >
+                  <span><i class="bi bi-play-fill"></i></span>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="text-warning small fw-bold"
+                  >EPISODE 01 · 08:45</span
+                >
+                <h5 class="mt-1">
+                  The Slap &amp; Stretch: Protecting The Cornicione Air Rim
+                </h5>
+                <p class="mb-0 small">
+                  Chef Elena demonstrates how to stretch 48-hour dough by hand
+                  without degassing the rim.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="tutorial-card">
+              <div class="tut-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=600&q=80"
+                  alt="Butchery & Blending Ratios"
+                />
+                <div
+                  class="tut-play"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  style="cursor: pointer"
+                >
+                  <span><i class="bi bi-play-fill"></i></span>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="text-warning small fw-bold"
+                  >EPISODE 02 · 11:20</span
+                >
+                <h5 class="mt-1">
+                  The Golden Burger Ratio: Chuck, Brisket &amp; Short Rib
+                </h5>
+                <p class="mb-0 small">
+                  Head Butcher Arthur breaks down how cut selection creates the
+                  ultimate juicy burger bite.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="tutorial-card">
+              <div class="tut-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+                  alt="Botanical Cordial Crafting"
+                />
+                <div
+                  class="tut-play"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  style="cursor: pointer"
+                >
+                  <span><i class="bi bi-play-fill"></i></span>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="text-warning small fw-bold"
+                  >EPISODE 03 · 06:15</span
+                >
+                <h5 class="mt-1">
+                  Infusing Seasonal Botanicals &amp; Citrus Syrups
+                </h5>
+                <p class="mb-0 small">
+                  Julian shares how we craft zero-proof aperitivo spritzes using
+                  English garden herbs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 7: SEASONAL INGREDIENT SPOTLIGHT ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img
+              src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
+              alt="Wiltshire Black Autumn Truffles & Herbs"
+              style="
+                border-radius: 26px;
+                height: 400px;
+                width: 100%;
+                object-fit: cover;
+              "
+            />
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="eyebrow">Ingredient Of The Month</div>
+            <h2 class="section-title mb-3">
+              Foraged Wiltshire <span class="accent">Autumn Truffles</span>
+            </h2>
+            <p class="mb-4">
+              Throughout October and November, we work with ethical woodland
+              foragers in Wiltshire to bring fresh English autumn truffles
+              directly to our Covent Garden pass—shaved generously over our Wild
+              Mushroom Pizza and folded into our Wagyu Burger aioli.
+            </p>
+            <a href="#" class="btn-chili"
+              >Taste Our Truffle Specials <i class="bi bi-arrow-up-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 8: PRESS & MEDIA MENTIONS ============ -->
+    <section class="section-pad bg-paper">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">In The Press</div>
+          <h2 class="section-title">
+            What Food Critics <span class="accent">Write About Us</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="testi-card">
+              <span class="blog-meta">The Evening Standard</span>
+              <p class="mt-2">
+                "Stackly has elevated the humble smash burger and Neapolitan
+                pizza into high culinary theatre without losing an ounce of soul
+                or warmth."
+              </p>
+              <strong>★★★★★ — London Dining Guide</strong>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testi-card">
+              <span class="blog-meta">TimeOut London</span>
+              <p class="mt-2">
+                "If you only eat one slice in Covent Garden this year, make it
+                Stackly's Burrata &amp; Scotch Bonnet Honey sourdough pizza."
+              </p>
+              <strong>★★★★★ — Critics' Choice</strong>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testi-card">
+              <span class="blog-meta">Olive Magazine UK</span>
+              <p class="mt-2">
+                "A masterclass in British farm provenance—from Wharfedale Wagyu
+                to Mendip cave cheddar, every ingredient sings."
+              </p>
+              <strong>★★★★★ — Best Casual Dining</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 9: SUPPER CLUB NEWSLETTER ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="newsletter-wrap" data-aos="zoom-in">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <div class="eyebrow" style="color: var(--mustard)">
+                Never Miss A Recipe
+              </div>
+              <h2>Get Weekly Chef Recipes &amp; Secret Menu Invites</h2>
+              <p>
+                Delivered every Friday morning straight from our Covent Garden
+                kitchen.
+              </p>
+            </div>
+            <div class="col-lg-5">
+              <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit">Join Journal</button>
+              </form>
+              <div
+                id="newsletterMsg"
+                class="mt-3"
+                style="
+                  color: var(--mustard);
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  display: none;
+                "
+              >
+                <i class="bi bi-check-circle-fill me-1"></i> Subscribed! Welcome
+                to the Stackly Culinary Journal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Article Modal -->
+    <div class="modal fade" id="blogModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div
+          class="modal-content position-relative"
+          style="border-radius: 24px; overflow: hidden"
+        >
+          <button
+            type="button"
+            class="btn-close-custom"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <div class="blog-modal-img"><img id="bmImg" src="" alt="" /></div>
+          <div class="p-4 p-md-5 blog-modal-body">
+            <div class="blog-meta mb-2" id="bmMeta"></div>
+            <h3 class="mb-3" id="bmTitle"></h3>
+            <div id="bmBody"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div
+          class="modal-content"
+          style="border-radius: 20px; overflow: hidden; border: none"
+        >
+          <div class="modal-body p-0 ratio ratio-16x9">
+            <iframe
+              id="videoFrame"
+              src=""
+              title="Stackly Masterclass"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Common Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Visual Gallery | Stackly Food &amp; Restaurant — Plates, Flame &amp;
+      Ambience
+    </title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/gallery.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Common Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ============ SECTION 1: PAGE BANNER & BREADCRUMBS ============ -->
+    <section
+      class="page-banner text-center"
+      style="
+        --banner-bg: url(&quot;https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=80&quot;);
+      "
+    >
+      <div class="container">
+        <span class="banner-eyebrow">A Feast For The Eyes</span>
+        <h1>Visual <em>Gallery</em></h1>
+        <p class="banner-desc">
+          Step inside our Covent Garden flagship through a curated collection of
+          signature dishes, 450°C wood-fired oven moments, candlelit brick
+          vaults, and unforgettable guest celebrations.
+        </p>
+        <nav aria-label="breadcrumb">
+          <div class="breadcrumb-pill">
+            <a href="../index.html"
+              ><i class="bi bi-house-door-fill"></i> Home</a
+            >
+            <span class="sep"><i class="bi bi-chevron-right"></i></span>
+            <span class="current">Visual Gallery</span>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: FILTERABLE SIGNATURE PLATES GALLERY ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="text-center mb-4" data-aos="fade-up">
+          <div class="eyebrow">Captured Fresh From The Pass</div>
+          <h2 class="section-title">
+            Signature Plates &amp; <span class="accent">Kitchen Moments</span>
+          </h2>
+        </div>
+
+        <div class="gallery-filter-wrap" data-aos="fade-up">
+          <button type="button" class="gf-btn active" data-filter="all">
+            All Captures
+          </button>
+          <button type="button" class="gf-btn" data-filter="plates">
+            Signature Dishes
+          </button>
+          <button type="button" class="gf-btn" data-filter="flame">
+            Oven &amp; Grill
+          </button>
+          <button type="button" class="gf-btn" data-filter="drinks">
+            Shakes &amp; Desserts
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4 gallery-filter-item" data-category="plates">
+            <div
+              class="gallery-tile"
+              data-title="Triple Cheese Bone-Marrow Smash"
+              data-img="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=80"
+              data-desc="Seared on smoking cast iron with three layers of aged Somerset cheddar, pickled red onions, and bone-marrow glaze."
+            >
+              <span class="gallery-meta-badge">Wagyu Grill</span>
+              <img
+                src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=80"
+                alt="Triple Cheese Bone-Marrow Smash"
+              />
+              <div class="gt-overlay">
+                <span>Bone-Marrow Smash</span><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 gallery-filter-item" data-category="flame">
+            <div
+              class="gallery-tile"
+              data-title="Leopard-Spotted Sourdough Rise"
+              data-img="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=900&q=80"
+              data-desc="Hand-stretched 48-hour dough blistering inside our 450°C English oak-fired brick oven."
+            >
+              <span class="gallery-meta-badge">Brick Oven</span>
+              <img
+                src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=900&q=80"
+                alt="Leopard-Spotted Sourdough Rise"
+              />
+              <div class="gt-overlay">
+                <span>450°C Sourdough Bake</span><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 gallery-filter-item" data-category="plates">
+            <div
+              class="gallery-tile"
+              data-title="12-Hour Oak Smoked Beef Brisket"
+              data-img="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=900&q=80"
+              data-desc="Slow-smoked over white oak logs until fork-tender, finished with espresso-chili barbecue glaze."
+            >
+              <span class="gallery-meta-badge">Smokehouse</span>
+              <img
+                src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=900&q=80"
+                alt="12-Hour Oak Smoked Beef Brisket"
+              />
+              <div class="gt-overlay">
+                <span>Oak-Smoked Brisket</span><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 gallery-filter-item" data-category="drinks">
+            <div
+              class="gallery-tile"
+              data-title="Artisan Berry &amp; Mascarpone Sundae"
+              data-img="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80"
+              data-desc="Whipped mascarpone gelato layered with macerated Kentish strawberries and buttery shortbread crumble."
+            >
+              <span class="gallery-meta-badge">Pastry Pass</span>
+              <img
+                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80"
+                alt="Artisan Berry & Mascarpone Sundae"
+              />
+              <div class="gt-overlay">
+                <span>Berry Mascarpone Sundae</span
+                ><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 gallery-filter-item" data-category="flame">
+            <div
+              class="gallery-tile"
+              data-title="Chargrilled Garlic &amp; Herb Flatbreads"
+              data-img="https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=900&q=80"
+              data-desc="Brushed with roasted garlic confit butter, sea salt flakes, and garden rosemary straight from the oven."
+            >
+              <span class="gallery-meta-badge">Oven Fresh</span>
+              <img
+                src="https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=900&q=80"
+                alt="Chargrilled Garlic & Herb Flatbreads"
+              />
+              <div class="gt-overlay">
+                <span>Garlic Herb Sourdough</span><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 gallery-filter-item" data-category="drinks">
+            <div
+              class="gallery-tile"
+              data-title="Botanical Citrus &amp; Thyme Infusions"
+              data-img="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=900&q=80"
+              data-desc="Small-batch house sodas crafted with cold-pressed Sicilian citrus, English garden thyme, and botanical bitters."
+            >
+              <span class="gallery-meta-badge">Craft Bar</span>
+              <img
+                src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=900&q=80"
+                alt="Botanical Citrus & Thyme Infusions"
+              />
+              <div class="gt-overlay">
+                <span>Botanical Craft Coolers</span
+                ><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: DINING SPACES & ARCHITECTURAL AMBIENCE ============ -->
+    <section class="section-pad bg-paper">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Explore Our Flagship</div>
+          <h2 class="section-title">
+            Covent Garden <span class="accent">Dining Spaces</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="space-tour-card">
+              <div class="stc-img">
+                <span class="stc-capacity">60 Seats</span>
+                <img
+                  src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80"
+                  alt="The Glasshouse Piazza Terrace"
+                />
+              </div>
+              <div class="stc-body">
+                <h5>The Heated Piazza Terrace</h5>
+                <p class="mb-0">
+                  Bathed in natural light by day and festooned with warm Edison
+                  bulbs by evening, overlooking Covent Garden street performers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="space-tour-card">
+              <div class="stc-img">
+                <span class="stc-capacity">85 Seats</span>
+                <img
+                  src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=700&q=80"
+                  alt="Main Open-Flame Dining Hall"
+                />
+              </div>
+              <div class="stc-body">
+                <h5>Main Open-Flame Dining Hall</h5>
+                <p class="mb-0">
+                  Chestnut leather booths, reclaimed London brick walls, and
+                  front-row counter views of our copper wood-fired pizza oven.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-tour-card">
+              <div class="stc-img">
+                <span class="stc-capacity">36 Seats</span>
+                <img
+                  src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=700&q=80"
+                  alt="The Underground Tasting Cellar"
+                />
+              </div>
+              <div class="stc-body">
+                <h5>The Underground Tasting Vault</h5>
+                <p class="mb-0">
+                  Our historic 19th-century vaulted cellar available for private
+                  dinners, cocktail receptions, and bespoke chef tasting nights.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4: THE ART OF PLATING (BASIL) ============ -->
+    <section class="section-pad bg-basil">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Behind The Pass</div>
+          <h2 class="section-title">
+            Anatomy Of A <span class="accent">Stackly Plate</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+            <div class="plating-step-card">
+              <div class="psc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
+                  alt="Artisan Potato Brioche"
+                />
+              </div>
+              <div class="psc-body">
+                <span class="text-warning fw-bold small">LAYER 01</span>
+                <h5 class="mt-1">Toasted Potato Brioche</h5>
+                <p class="mb-0 small">
+                  Glazed withcultured Somerset butter and toasted on the plancha
+                  for a golden crunch.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+            <div class="plating-step-card">
+              <div class="psc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80"
+                  alt="35-Day Dry-Aged Wagyu"
+                />
+              </div>
+              <div class="psc-body">
+                <span class="text-warning fw-bold small">LAYER 02</span>
+                <h5 class="mt-1">Dry-Aged Wagyu Sear</h5>
+                <p class="mb-0 small">
+                  Smashed thin on 280°C cast iron to lock in marbling juices
+                  beneath a crisp caramelised crust.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="160"
+          >
+            <div class="plating-step-card">
+              <div class="psc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=600&q=80"
+                  alt="Cave-Aged Cheddar Melt"
+                />
+              </div>
+              <div class="psc-body">
+                <span class="text-warning fw-bold small">LAYER 03</span>
+                <h5 class="mt-1">Cave-Aged Cheddar</h5>
+                <p class="mb-0 small">
+                  Steamed under a copper cloche so vintage Somerset cheddar
+                  drapes over every edge.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="240"
+          >
+            <div class="plating-step-card">
+              <div class="psc-img">
+                <img
+                  src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?auto=format&fit=crop&w=600&q=80"
+                  alt="House Fermented Pickles & Aioli"
+                />
+              </div>
+              <div class="psc-body">
+                <span class="text-warning fw-bold small">LAYER 04</span>
+                <h5 class="mt-1">Truffle &amp; Pickle Balance</h5>
+                <p class="mb-0 small">
+                  Finished with black truffle emulsion and crisp dill pickles to
+                  cut through the richness.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5: BEHIND THE SCENES IN OUR LONDON KITCHEN ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="eyebrow">Morning Prep Rituals</div>
+            <h2 class="section-title mb-4">
+              Every Morning Starts At <span class="accent">5:30 AM</span>
+            </h2>
+            <p class="mb-4">
+              Long before the first guest walks into Covent Garden, our bakers
+              are shaping 400 brioche buns, our pizzaiolos are balling fermented
+              dough, and our prep chefs are roasting vine tomatoes and whisking
+              fresh aioli.
+            </p>
+            <div class="feature-row">
+              <div class="f-ico"><i class="bi bi-thermometer-high"></i></div>
+              <div>
+                <h6>Stoking The 450°C Brick Oven</h6>
+                <p>
+                  Seasoned English white oak logs are lit at dawn to bring our
+                  dome floor to optimal baking heat.
+                </p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="f-ico">
+                <i class="bi bi-Archive"></i><i class="bi bi-box-seam"></i>
+              </div>
+              <div>
+                <h6>Small-Batch In-House Grinding</h6>
+                <p>
+                  Chuck, brisket, and rib-cap cuts are ground fresh twice
+                  daily—never frozen, never pre-packed.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="row g-3">
+              <div class="col-6">
+                <img
+                  src="https://images.unsplash.com/photo-1556910109-a14b4226abff?auto=format&fit=crop&w=600&q=80"
+                  alt="Chefs prepping in kitchen"
+                  style="
+                    border-radius: 22px;
+                    height: 260px;
+                    width: 100%;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+              <div class="col-6">
+                <img
+                  src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=600&q=80"
+                  alt="Busy restaurant service"
+                  style="
+                    border-radius: 22px;
+                    height: 260px;
+                    width: 100%;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+              <div class="col-12">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80"
+                  alt="Fine plating at pass"
+                  style="
+                    border-radius: 22px;
+                    height: 240px;
+                    width: 100%;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6: PRIVATE CELEBRATIONS & EVENTS GALLERY ============ -->
+    <section class="section-pad bg-paper">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Unforgettable Nights</div>
+          <h2 class="section-title">
+            Celebrations At <span class="accent">Stackly</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up">
+            <div
+              class="gallery-tile"
+              data-title="Candlelit Vault Tasting Dinner"
+              data-img="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80"
+              data-desc="Long-table feasting in our underground Covent Garden brick vault with paired craft ales and wood-fired platters."
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80"
+                alt="Candlelit Vault Tasting Dinner"
+              />
+              <div class="gt-overlay">
+                <span>Vault Long-Table Feasts</span
+                ><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="gallery-tile"
+              data-title="Sourdough Pizza Making Socials"
+              data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80"
+              data-desc="Interactive weekend dough-stretching and topping sessions for birthdays, team socials, and foodie groups."
+            >
+              <img
+                src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80"
+                alt="Sourdough Pizza Making Socials"
+              />
+              <div class="gt-overlay">
+                <span>Group Dough Masterclasses</span
+                ><i class="bi bi-zoom-in"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 7: KITCHEN FILM & AMBIENCE SHOWREEL ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="video-box">
+              <img
+                src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=900&q=80"
+                alt="Stackly Kitchen Film"
+              />
+              <div class="vb-overlay">
+                <div
+                  class="play-btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                >
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="eyebrow">Watch The Flame</div>
+            <h2 class="section-title mb-3">
+              A Night Inside Our
+              <span class="accent">Covent Garden Kitchen</span>
+            </h2>
+            <p class="mb-4">
+              Hear the sizzle of Yorkshire Wagyu hitting cast iron, watch our
+              pizzaiolos launch sourdough into 450°C flames, and soak in the
+              buzz of a Friday night service in London.
+            </p>
+            <a href="#" class="btn-chili"
+              >Experience It Live — Book Now <i class="bi bi-arrow-up-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 8: GUEST SOCIAL WALL (#STACKLYLONDON) ============ -->
+    <section class="section-pad bg-paper">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="eyebrow">Tag @StacklyFoodUK</div>
+          <h2 class="section-title">
+            Shared By Our <span class="accent">Community</span>
+          </h2>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
+            <div class="insta-wall-card">
+              <img
+                src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80"
+                alt="Guest Food Photo 1"
+              />
+              <div class="insta-hover">
+                <i class="bi bi-instagram fs-3 mb-2"></i
+                ><span>@londonfoodie_uk</span
+                ><small>"Best burger night in WC2!"</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="60">
+            <div class="insta-wall-card">
+              <img
+                src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=500&q=80"
+                alt="Guest Food Photo 2"
+              />
+              <div class="insta-hover">
+                <i class="bi bi-instagram fs-3 mb-2"></i
+                ><span>@coventgardeneats</span
+                ><small>"Sunday sourdough perfection"</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="120">
+            <div class="insta-wall-card">
+              <img
+                src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=500&q=80"
+                alt="Guest Food Photo 3"
+              />
+              <div class="insta-hover">
+                <i class="bi bi-instagram fs-3 mb-2"></i
+                ><span>@tasteoflondon</span
+                ><small>"Brioche French toast brunch!"</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="180">
+            <div class="insta-wall-card">
+              <img
+                src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=500&q=80"
+                alt="Guest Food Photo 4"
+              />
+              <div class="insta-hover">
+                <i class="bi bi-instagram fs-3 mb-2"></i><span>@sohodiners</span
+                ><small>"Feasting board for four"</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 9: RESERVE YOUR TABLE CTA ============ -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="cta-banner" data-aos="zoom-in">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <div class="cta-eyebrow">Hungry Yet?</div>
+              <h2>Turn These Cravings Into Tonight's Dinner</h2>
+              <p class="mb-0" style="color: var(--ink)">
+                Book a booth at 24 Covent Garden Piazza or order online for
+                express hot delivery across London.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#" class="btn-chili"
+                >Reserve A Table <i class="bi bi-calendar-check"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div
+          class="modal-content position-relative"
+          style="border-radius: 24px; overflow: hidden"
+        >
+          <button
+            type="button"
+            class="btn-close-custom"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <div class="lb-img"><img id="lbImg" src="" alt="" /></div>
+          <div class="p-4 p-md-5">
+            <h3 class="mb-2" id="lbTitle"></h3>
+            <p class="mb-0" id="lbDesc"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div
+          class="modal-content"
+          style="border-radius: 20px; overflow: hidden; border: none"
+        >
+          <div class="modal-body p-0 ratio ratio-16x9">
+            <iframe
+              id="videoFrame"
+              src=""
+              title="Stackly Kitchen Showreel"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Common Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

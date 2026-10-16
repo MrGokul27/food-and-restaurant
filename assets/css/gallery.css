@@ -1,0 +1,172 @@
+/* ============ GALLERY PAGE SPECIFIC STYLES ============ */
+
+/* Gallery Filter Controls */
+.gallery-filter-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.gf-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: var(--card);
+  border: 1.5px solid var(--border-soft);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gf-btn:hover,
+.gf-btn.active {
+  background: var(--chili);
+  color: #fff;
+  border-color: var(--chili);
+  box-shadow: 0 8px 20px rgba(200, 29, 37, 0.25);
+}
+
+/* Masonry-style Visual Grid */
+.gallery-Card-tall {
+  height: 420px;
+}
+
+.gallery-meta-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(36, 22, 8, 0.78);
+  backdrop-filter: blur(6px);
+  color: var(--mustard);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
+  z-index: 2;
+}
+
+/* Ambience & Dining Spaces Tour */
+.space-tour-card {
+  background: var(--card);
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.space-tour-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--mustard);
+  box-shadow: 0 20px 42px rgba(36, 22, 8, 0.12);
+}
+
+.stc-img {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.space-tour-card:hover .stc-img img {
+  transform: scale(1.08);
+}
+
+.stc-capacity {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: var(--chili);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+.stc-body {
+  padding: 24px;
+}
+
+/* Plating Artistry Step Cards */
+.plating-step-card {
+  background: rgba(255, 249, 241, 0.08);
+  border: 1px solid rgba(226, 193, 107, 0.28);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.plating-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--mustard);
+  background: rgba(255, 249, 241, 0.14);
+}
+
+.psc-img {
+  height: 190px;
+  overflow: hidden;
+}
+
+.psc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.plating-step-card:hover .psc-img img {
+  transform: scale(1.08);
+}
+
+.psc-body {
+  padding: 20px;
+}
+
+/* Guest Social Wall */
+.insta-wall-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 240px;
+}
+
+.insta-wall-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.insta-wall-card:hover img {
+  transform: scale(1.1);
+}
+
+.insta-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(200, 29, 37, 0.78);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  padding: 16px;
+  text-align: center;
+}
+
+.insta-wall-card:hover .insta-hover {
+  opacity: 1;
+}
