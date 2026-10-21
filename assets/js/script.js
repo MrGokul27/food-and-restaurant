@@ -18,10 +18,10 @@
         <div class="d-flex align-items-center">
             <span class="topbar-item mb-0"><span class="status-dot"></span> Open Daily: 10:00 AM - 11:30 PM</span>
             <span>
-                <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://x.com" target="_blank" rel="noopener" class="social-link" aria-label="X Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" rel="noopener" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" rel="noopener" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" rel="noopener" class="social-link" aria-label="X Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
             </span>
         </div>
     </div>
@@ -75,15 +75,14 @@
             <div class="col-lg-4">
                 <a class="brand-logo mb-3" data-nav-link="index.html" href="index.html" style="color:#fff;">
                     <img data-logo-img src="assets/images/logoStackly.webp" alt="Stackly Food & Restaurant Logo">
-                    <span style="color:#fff;">Stackly<small style="color:var(--mustard);">.</small></span>
                 </a>
                 <p>Artisanal wood-fired pizzas, flame-seared gourmet burgers, and British farm-to-table plates crafted with passion in the heart of Covent Garden, London.</p>
                 <div class="footer-social mt-3">
-                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://x.com" target="_blank" rel="noopener" aria-label="X Twitter"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" rel="noopener" aria-label="X Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-6">
@@ -103,7 +102,7 @@
                 <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link">Buttermilk Chicken</a>
                 <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link">Truffle &amp; Herb Fries</a>
                 <a data-nav-link="pages/menu.html" href="pages/menu.html" class="f-link">Artisan Gelato Shakes</a>
-                <a data-nav-link="pages/reserve.html" href="pages/reserve.html" class="f-link">Private Dining</a>
+                <a href="#" class="f-link">Private Dining</a>
             </div>
             <div class="col-lg-4">
                 <h6>Get In Touch</h6>
@@ -123,7 +122,7 @@
             </span>
         </div>
     </div>
-    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a href="#" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
     <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
 </footer>
 <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="cartCanvas">
@@ -641,7 +640,33 @@
     }
   }
 
+  // Redirect any empty links ("") or "#" links to the 404 page across the whole project
+  function initEmptyLinkRedirect() {
+    document.addEventListener(
+      "click",
+      (e) => {
+        const anchor = e.target.closest("a");
+        if (!anchor) return;
+
+        const rawHref = anchor.getAttribute("href");
+        const trimmedHref = rawHref ? rawHref.trim() : "";
+
+        if (
+          trimmedHref === "" ||
+          trimmedHref === "#" ||
+          trimmedHref.toLowerCase() === "javascript:void(0)"
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = rootPrefix + "pages/404.html";
+        }
+      },
+      true,
+    );
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
+    initEmptyLinkRedirect();
     loadCommonComponents();
     initPageFeatures();
   });
