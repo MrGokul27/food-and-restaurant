@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Sign In | Stackly Food &amp; Restaurant — Covent Garden Member Portal
+    </title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <!-- Bootstrap 5.3 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Main Theme CSS & Auth CSS -->
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/auth.css" rel="stylesheet" />
+  </head>
+  <body class="auth-body">
+    <!-- Ambient Decorative Orbs -->
+    <div class="auth-ambient-orb orb-1"></div>
+    <div class="auth-ambient-orb orb-2"></div>
+
+    <!-- ============ TOP BAR WITH BACK TO HOME BUTTON ============ -->
+    <header class="auth-topbar">
+      <div class="container auth-topbar-inner">
+        <a href="../index.html" class="auth-brand" aria-label="Stackly Home">
+          <img
+            src="../assets/images/logoStackly.webp"
+            alt="Stackly Food & Restaurant Logo"
+          />
+          <span class="auth-brand-badge">Covent Garden Kitchen</span>
+        </a>
+        <a href="../index.html" class="btn-back-home" id="topBackHomeBtn">
+          <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- ============ MAIN LOGIN SECTION ============ -->
+    <main class="auth-section">
+      <div class="auth-card">
+        <!-- Left Culinary Showcase Panel -->
+        <aside class="auth-visual-panel">
+          <div
+            class="auth-visual-bg"
+            style="
+              background-image: url(&quot;../assets/images/home/home-about-img-1.webp&quot;);
+            "
+          ></div>
+          <div class="auth-visual-overlay"></div>
+
+          <div class="auth-visual-content">
+            <div class="auth-eyebrow-pill">
+              <i class="bi bi-fire"></i> Member &amp; Staff Portal
+            </div>
+            <h1 class="auth-visual-title">
+              Welcome Back To <em>Flame-Kissed</em> Hospitality
+            </h1>
+            <p class="auth-visual-desc">
+              Sign in to manage your Covent Garden table locks, reorder your
+              favourite Wagyu smash burgers &amp; 48-hour sourdough pizzas, or
+              access your kitchen &amp; management dashboard.
+            </p>
+
+            <div class="auth-dish-showcase">
+              <img
+                src="../assets/images/home/home-hero-img-wrap.webp"
+                alt="Signature Truffle Wagyu Burger"
+              />
+              <div>
+                <h6>Truffle Wagyu Smash &amp; Wood-Fired Pass</h6>
+                <p>
+                  Priority table reservations, live kitchen order tracking &amp;
+                  member-only tasting menus.
+                </p>
+              </div>
+            </div>
+
+            <ul class="auth-perks-list">
+              <li>
+                <span class="perk-ico"
+                  ><i class="bi bi-calendar2-check-fill"></i
+                ></span>
+                <span>Instant Booth &amp; Chef's Counter Table Locks</span>
+              </li>
+              <li>
+                <span class="perk-ico"
+                  ><i class="bi bi-bag-heart-fill"></i
+                ></span>
+                <span>One-Tap Reordering &amp; Express 18-Min Delivery</span>
+              </li>
+              <li>
+                <span class="perk-ico"><i class="bi bi-shield-check"></i></span>
+                <span>Role-Based Access for Diners, Chefs &amp; Managers</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="auth-visual-footer">
+            <div class="auth-rating-badge">
+              <span class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </span>
+              <span><strong>4.9/5</strong> · 18k+ London Diners</span>
+            </div>
+            <div class="auth-location-tag">
+              <i class="bi bi-geo-alt-fill"></i> 24 Covent Garden Piazza
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Login Form Panel -->
+        <section class="auth-form-panel">
+          <div class="auth-form-header">
+            <div class="auth-script-tag">Welcome Back</div>
+            <h2 class="auth-form-title">
+              Sign In To <span class="accent">Stackly</span>
+            </h2>
+            <p class="auth-form-subtitle">
+              Enter your credentials below. All fields are required.
+            </p>
+          </div>
+
+          <!-- Switch Tabs -->
+          <div class="auth-mode-tabs" role="tablist">
+            <a
+              href="login.html"
+              class="auth-mode-tab active"
+              aria-current="page"
+            >
+              <i class="bi bi-box-arrow-in-right"></i> Sign In
+            </a>
+            <a href="register.html" class="auth-mode-tab">
+              <i class="bi bi-person-plus"></i> Register
+            </a>
+          </div>
+
+          <!-- Dynamic Alert Banner -->
+          <div
+            id="loginAlertBanner"
+            class="auth-alert"
+            role="alert"
+            aria-live="polite"
+          >
+            <i class="bi bi-check-circle-fill" id="loginAlertIcon"></i>
+            <span id="loginAlertText"></span>
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" class="auth-form" novalidate>
+            <!-- 1. Role Field -->
+            <div class="form-group">
+              <label for="loginRole" class="auth-label">
+                <span>Select Role <span class="req-star">*</span></span>
+                <span class="auth-label-hint">Required</span>
+              </label>
+              <div class="auth-input-wrap">
+                <i class="bi bi-person-badge auth-input-icon"></i>
+                <select id="loginRole" name="role" class="auth-select" required>
+                  <option value="" disabled selected>
+                    Choose your role...
+                  </option>
+                  <option value="customer">Customer / Guest Diner</option>
+                  <option value="chef">Head Chef / Kitchen Staff</option>
+                  <option value="manager">Restaurant Manager</option>
+                  <option value="delivery">Delivery Partner</option>
+                  <option value="admin">Admin / Owner</option>
+                </select>
+              </div>
+              <div id="loginRoleFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 2. Email Field -->
+            <div class="form-group">
+              <label for="loginEmail" class="auth-label">
+                <span>Email Address <span class="req-star">*</span></span>
+                <span class="auth-label-hint">Required</span>
+              </label>
+              <div class="auth-input-wrap">
+                <i class="bi bi-envelope auth-input-icon"></i>
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="email"
+                  class="auth-input"
+                  placeholder="you@stacklyfood.co.uk"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div id="loginEmailFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- 3. Password Field (with Weak Password Validation) -->
+            <div class="form-group">
+              <label for="loginPassword" class="auth-label">
+                <span>Password <span class="req-star">*</span></span>
+                <span class="auth-label-hint">Strong password required</span>
+              </label>
+              <div class="auth-input-wrap">
+                <i class="bi bi-lock auth-input-icon"></i>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="password"
+                  class="auth-input"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  id="toggleLoginPassword"
+                  aria-label="Toggle password visibility"
+                >
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div id="loginPasswordFeedback" class="field-feedback"></div>
+
+              <!-- Live Weak Password Strength Meter -->
+              <div class="password-strength-box" id="loginStrengthBox">
+                <div class="strength-header">
+                  <span>Password Strength</span>
+                  <span id="loginStrengthLabel">Enter password</span>
+                </div>
+                <div
+                  class="strength-bars"
+                  id="loginStrengthBars"
+                  data-score="0"
+                >
+                  <div class="strength-bar-seg"></div>
+                  <div class="strength-bar-seg"></div>
+                  <div class="strength-bar-seg"></div>
+                  <div class="strength-bar-seg"></div>
+                </div>
+                <ul class="pw-criteria-list" id="loginPwCriteria">
+                  <li class="pw-criteria-item" data-rule="length">
+                    <i class="bi bi-circle"></i> 8+ Chars
+                  </li>
+                  <li class="pw-criteria-item" data-rule="upper">
+                    <i class="bi bi-circle"></i> Uppercase
+                  </li>
+                  <li class="pw-criteria-item" data-rule="lower">
+                    <i class="bi bi-circle"></i> Lowercase
+                  </li>
+                  <li class="pw-criteria-item" data-rule="number">
+                    <i class="bi bi-circle"></i> Number
+                  </li>
+                  <li class="pw-criteria-item" data-rule="special">
+                    <i class="bi bi-circle"></i> Special (@#$%)
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 4. Remember Me Field (Required) -->
+            <div class="form-group">
+              <div class="auth-check-row mb-1">
+                <label class="custom-check-label" for="rememberMe">
+                  <input
+                    type="checkbox"
+                    id="rememberMe"
+                    name="rememberMe"
+                    class="custom-check-input"
+                    required
+                  />
+                  <span>
+                    Remember me on this device
+                    <span class="req-star text-danger">*</span>
+                  </span>
+                </label>
+              </div>
+              <div id="loginRememberFeedback" class="field-feedback"></div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-auth-submit" id="loginSubmitBtn">
+              <span>Sign In To Account</span>
+              <i class="bi bi-arrow-right-circle-fill"></i>
+            </button>
+          </form>
+
+          <!-- Switch to Register & Secondary Back to Home -->
+          <div class="auth-switch-prompt">
+            New to Stackly Kitchen?
+            <a href="register.html">Create an Account</a>
+          </div>
+
+          <div class="auth-bottom-home-wrap">
+            <a href="../index.html" class="link-back-home-inline">
+              <i class="bi bi-house-heart-fill"></i> Back to Home Page
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Mini Footer -->
+    <footer class="auth-mini-footer">
+      © 2026 Stackly Food &amp; Restaurant · 24 Covent Garden Piazza, London
+      WC2E 8RF
+    </footer>
+
+    <!-- ============ LOGIN VALIDATION SCRIPT ============ -->
+    <script>
+      (function () {
+        "use strict";
+
+        const loginForm = document.getElementById("loginForm");
+        const roleInput = document.getElementById("loginRole");
+        const emailInput = document.getElementById("loginEmail");
+        const passwordInput = document.getElementById("loginPassword");
+        const rememberInput = document.getElementById("rememberMe");
+        const togglePwBtn = document.getElementById("toggleLoginPassword");
+
+        const roleFeedback = document.getElementById("loginRoleFeedback");
+        const emailFeedback = document.getElementById("loginEmailFeedback");
+        const passwordFeedback = document.getElementById(
+          "loginPasswordFeedback",
+        );
+        const rememberFeedback = document.getElementById(
+          "loginRememberFeedback",
+        );
+
+        const strengthBars = document.getElementById("loginStrengthBars");
+        const strengthLabel = document.getElementById("loginStrengthLabel");
+        const criteriaItems = document.querySelectorAll(
+          "#loginPwCriteria .pw-criteria-item",
+        );
+
+        const alertBanner = document.getElementById("loginAlertBanner");
+        const alertIcon = document.getElementById("loginAlertIcon");
+        const alertText = document.getElementById("loginAlertText");
+
+        // Check if redirected after successful registration
+        const params = new URLSearchParams(window.location.search);
+        let savedUser = null;
+        try {
+          savedUser = JSON.parse(
+            localStorage.getItem("stackly_registered_user") || "null",
+          );
+        } catch (e) {
+          savedUser = null;
+        }
+
+        if (
+          params.get("registered") === "true" ||
+          sessionStorage.getItem("stackly_just_registered") === "1"
+        ) {
+          sessionStorage.removeItem("stackly_just_registered");
+          showAlert(
+            "success",
+            "Registration complete! Please sign in with your registered details.",
+          );
+          if (savedUser) {
+            if (savedUser.email) emailInput.value = savedUser.email;
+            if (savedUser.role) roleInput.value = savedUser.role;
+          }
+        }
+
+        function showAlert(type, message) {
+          alertBanner.className =
+            "auth-alert show " +
+            (type === "success"
+              ? "alert-success-custom"
+              : "alert-error-custom");
+          alertIcon.className =
+            type === "success"
+              ? "bi bi-check-circle-fill"
+              : "bi bi-exclamation-triangle-fill";
+          alertText.textContent = message;
+        }
+
+        function setFieldState(inputEl, feedbackEl, isValid, msg) {
+          if (inputEl) {
+            inputEl.classList.toggle("is-invalid", !isValid);
+            inputEl.classList.toggle("is-valid", isValid);
+          }
+          if (!feedbackEl) return;
+          if (!isValid && msg) {
+            feedbackEl.className = "field-feedback error";
+            feedbackEl.innerHTML = `<i class="bi bi-exclamation-circle-fill"></i> <span>${msg}</span>`;
+          } else if (isValid && msg) {
+            feedbackEl.className = "field-feedback success";
+            feedbackEl.innerHTML = `<i class="bi bi-check-circle-fill"></i> <span>${msg}</span>`;
+          } else {
+            feedbackEl.className = "field-feedback";
+            feedbackEl.innerHTML = "";
+          }
+        }
+
+        // Toggle password visibility
+        if (togglePwBtn && passwordInput) {
+          togglePwBtn.addEventListener("click", () => {
+            const isHidden = passwordInput.type === "password";
+            passwordInput.type = isHidden ? "text" : "password";
+            togglePwBtn.innerHTML = isHidden
+              ? '<i class="bi bi-eye-slash"></i>'
+              : '<i class="bi bi-eye"></i>';
+          });
+        }
+
+        // Weak Password Evaluation
+        function evaluatePassword(pw) {
+          const rules = {
+            length: pw.length >= 8,
+            upper: /[A-Z]/.test(pw),
+            lower: /[a-z]/.test(pw),
+            number: /[0-9]/.test(pw),
+            special: /[^A-Za-z0-9\s]/.test(pw),
+          };
+          const metCount = Object.values(rules).filter(Boolean).length;
+          return {
+            rules,
+            metCount,
+            isStrong:
+              rules.length &&
+              rules.upper &&
+              rules.lower &&
+              rules.number &&
+              rules.special,
+          };
+        }
+
+        function updatePasswordUI() {
+          const val = passwordInput.value;
+          const result = evaluatePassword(val);
+
+          criteriaItems.forEach((item) => {
+            const ruleName = item.getAttribute("data-rule");
+            const met = result.rules[ruleName];
+            item.classList.toggle("met", met);
+            const icon = item.querySelector("i");
+            if (icon) {
+              icon.className = met ? "bi bi-check-circle-fill" : "bi bi-circle";
+            }
+          });
+
+          if (!val) {
+            strengthBars.setAttribute("data-score", "0");
+            strengthLabel.textContent = "Enter password";
+            strengthLabel.style.color = "var(--ink-soft)";
+            return false;
+          }
+
+          let barScore = 1;
+          if (result.metCount >= 5) barScore = 4;
+          else if (result.metCount === 4) barScore = 3;
+          else if (result.metCount === 3) barScore = 2;
+
+          strengthBars.setAttribute("data-score", String(barScore));
+
+          const labels = {
+            1: { text: "Weak Password", color: "#e03131" },
+            2: { text: "Weak / Fair", color: "#f08c00" },
+            3: { text: "Almost Strong", color: "#d98a1d" },
+            4: { text: "Strong Password", color: "var(--basil)" },
+          };
+          strengthLabel.textContent = labels[barScore].text;
+          strengthLabel.style.color = labels[barScore].color;
+
+          if (!result.isStrong) {
+            const missing = [];
+            if (!result.rules.length) missing.push("at least 8 characters");
+            if (!result.rules.upper) missing.push("an uppercase letter");
+            if (!result.rules.lower) missing.push("a lowercase letter");
+            if (!result.rules.number) missing.push("a number");
+            if (!result.rules.special) missing.push("a special character");
+
+            setFieldState(
+              passwordInput,
+              passwordFeedback,
+              false,
+              "Weak password! Must include " + missing.join(", ") + ".",
+            );
+            return false;
+          }
+
+          setFieldState(
+            passwordInput,
+            passwordFeedback,
+            true,
+            "Strong password verified.",
+          );
+          return true;
+        }
+
+        function validateRole() {
+          if (!roleInput.value) {
+            setFieldState(
+              roleInput,
+              roleFeedback,
+              false,
+              "Please select your role.",
+            );
+            return false;
+          }
+          setFieldState(roleInput, roleFeedback, true, "");
+          return true;
+        }
+
+        function validateEmail() {
+          const val = emailInput.value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          if (!val) {
+            setFieldState(
+              emailInput,
+              emailFeedback,
+              false,
+              "Email address is required.",
+            );
+            return false;
+          }
+          if (!emailRegex.test(val)) {
+            setFieldState(
+              emailInput,
+              emailFeedback,
+              false,
+              "Please enter a valid email address.",
+            );
+            return false;
+          }
+          setFieldState(emailInput, emailFeedback, true, "");
+          return true;
+        }
+
+        function validateRemember() {
+          if (!rememberInput.checked) {
+            setFieldState(
+              null,
+              rememberFeedback,
+              false,
+              "Please check 'Remember me' to continue (required).",
+            );
+            return false;
+          }
+          setFieldState(null, rememberFeedback, true, "");
+          return true;
+        }
+
+        roleInput.addEventListener("change", validateRole);
+        emailInput.addEventListener("input", validateEmail);
+        passwordInput.addEventListener("input", updatePasswordUI);
+        rememberInput.addEventListener("change", validateRemember);
+
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const isRoleOk = validateRole();
+          const isEmailOk = validateEmail();
+          const isPwOk = updatePasswordUI();
+          const isRemOk = validateRemember();
+
+          if (!passwordInput.value) {
+            setFieldState(
+              passwordInput,
+              passwordFeedback,
+              false,
+              "Password is required.",
+            );
+          }
+
+          if (!isRoleOk || !isEmailOk || !isPwOk || !isRemOk) {
+            showAlert(
+              "error",
+              "Please complete all required fields and ensure your password is strong.",
+            );
+            return;
+          }
+
+          // Save session state
+          try {
+            localStorage.setItem(
+              "stackly_active_session",
+              JSON.stringify({
+                role: roleInput.value,
+                email: emailInput.value.trim(),
+                rememberMe: rememberInput.checked,
+                loginTime: new Date().toISOString(),
+              }),
+            );
+          } catch (err) {}
+
+          showAlert(
+            "success",
+            "Signed in successfully! Welcome back to Stackly Kitchen. Redirecting to Home...",
+          );
+
+          const submitBtn = document.getElementById("loginSubmitBtn");
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML =
+              '<span>Signing In...</span> <i class="bi bi-hourglass-split"></i>';
+          }
+
+          setTimeout(() => {
+            window.location.href = "../index.html";
+          }, 800);
+        });
+      })();
+    </script>
+  </body>
+</html>

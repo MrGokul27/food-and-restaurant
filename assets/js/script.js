@@ -55,6 +55,9 @@
                 <li class="nav-item"><a class="nav-link nav-link-custom" data-page="contact" data-nav-link="pages/contact.html" href="pages/contact.html">Contact</a></li>
             </ul>
             <div class="d-flex align-items-center gap-3 mobile-menu-actions">
+                <a data-nav-link="pages/login.html" href="pages/login.html" class="nav-icon-btn" aria-label="Sign In or Register" title="Sign In / Register">
+                    <i class="bi bi-person"></i>
+                </a>
                 <a href="#" class="nav-icon-btn d-none d-lg-inline-flex" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-label="Shopping Bag">
                     <i class="bi bi-bag"></i>
                     <span class="cart-count" id="cartCount">0</span>

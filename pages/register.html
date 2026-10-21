@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Create Account | Stackly Food &amp; Restaurant — Join Our Culinary Circle
+    </title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <!-- Bootstrap 5.3 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Main Theme CSS & Auth CSS -->
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/auth.css" rel="stylesheet" />
+  </head>
+  <body class="auth-body">
+    <!-- Ambient Decorative Orbs -->
+    <div class="auth-ambient-orb orb-1"></div>
+    <div class="auth-ambient-orb orb-2"></div>
+
+    <!-- ============ TOP BAR WITH BACK TO HOME BUTTON ============ -->
+    <header class="auth-topbar">
+      <div class="container auth-topbar-inner">
+        <a href="../index.html" class="auth-brand" aria-label="Stackly Home">
+          <img
+            src="../assets/images/logoStackly.webp"
+            alt="Stackly Food & Restaurant Logo"
+          />
+          <span class="auth-brand-badge">Covent Garden Kitchen</span>
+        </a>
+        <a href="../index.html" class="btn-back-home" id="topBackHomeBtn">
+          <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- ============ MAIN REGISTER SECTION ============ -->
+    <main class="auth-section">
+      <div class="auth-card">
+        <!-- Left Culinary Showcase Panel -->
+        <aside class="auth-visual-panel">
+          <div
+            class="auth-visual-bg"
+            style="
+              background-image: url(&quot;../assets/images/home/home-about-img-2.webp&quot;);
+            "
+          ></div>
+          <div class="auth-visual-overlay"></div>
+
+          <div class="auth-visual-content">
+            <div class="auth-eyebrow-pill">
+              <i class="bi bi-stars"></i> Stackly Culinary Circle
+            </div>
+            <h1 class="auth-visual-title">
+              Claim Your Seat At <em>London's</em> Finest Table
+            </h1>
+            <p class="auth-visual-desc">
+              Join our Covent Garden community of food lovers and culinary
+              professionals. Enjoy priority booth bookings, seasonal chef's
+              tasting invitations, and seamless ordering.
+            </p>
+
+            <div class="auth-dish-showcase">
+              <img
+                src="../assets/images/home/home-about-img-1.webp"
+                alt="Artisanal Wood-Fired Dining"
+              />
+              <div>
+                <h6>Complimentary Welcome Starter</h6>
+                <p>
+                  New members receive a wood-roasted garlic &amp; rosemary
+                  focaccia on their first table booking.
+                </p>
+              </div>
+            </div>
+
+            <ul class="auth-perks-list">
+              <li>
+                <span class="perk-ico"><i class="bi bi-award-fill"></i></span>
+                <span
+                  >Earn Flame Rewards Points on Every Dine-In &amp; Order</span
+                >
+              </li>
+              <li>
+                <span class="perk-ico"><i class="bi bi-bell-fill"></i></span>
+                <span>Early Access to Weekend Chef's Counter Seatings</span>
+              </li>
+              <li>
+                <span class="perk-ico"
+                  ><i class="bi bi-Gift-fill bi-gift-fill"></i
+                ></span>
+                <span
+                  >Complimentary Artisanal Gelato Shake on Your Birthday</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="auth-visual-footer">
+            <div class="auth-rating-badge">
+              <span class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </span>
+              <span><strong>4.9/5</strong> · 18k+ London Diners</span>
+            </div>
+            <div class="auth-location-tag">
+              <i class="bi bi-geo-alt-fill"></i> 24 Covent Garden Piazza
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Register Form Panel -->
+        <section class="auth-form-panel">
+          <div class="auth-form-header">
+            <div class="auth-script-tag">Join The Table</div>
+            <h2 class="auth-form-title">
+              Create Your <span class="accent">Account</span>
+            </h2>
+            <p class="auth-form-subtitle">
+              Fill in all required details below to register with Stackly.
+            </p>
+          </div>
+
+          <!-- Switch Tabs -->
+          <div class="auth-mode-tabs" role="tablist">
+            <a href="login.html" class="auth-mode-tab">
+              <i class="bi bi-box-arrow-in-right"></i> Sign In
+            </a>
+            <a
+              href="register.html"
+              class="auth-mode-tab active"
+              aria-current="page"
+            >
+              <i class="bi bi-person-plus"></i> Register
+            </a>
+          </div>
+
+          <!-- Dynamic Alert Banner -->
+          <div
+            id="regAlertBanner"
+            class="auth-alert"
+            role="alert"
+            aria-live="polite"
+          >
+            <i class="bi bi-check-circle-fill" id="regAlertIcon"></i>
+            <span id="regAlertText"></span>
+          </div>
+
+          <!-- Register Form -->
+          <form id="registerForm" class="auth-form" novalidate>
+            <div class="row g-3">
+              <!-- 1. Username Field (Letters Only — No Numbers, No Special Chars, No Spaces) -->
+              <div class="col-md-6">
+                <div class="form-group mb-0">
+                  <label for="regUsername" class="auth-label">
+                    <span>Username <span class="req-star">*</span></span>
+                    <span class="auth-label-hint">Letters only</span>
+                  </label>
+                  <div class="auth-input-wrap" id="usernameInputWrap">
+                    <i class="bi bi-person auth-input-icon"></i>
+                    <input
+                      type="text"
+                      id="regUsername"
+                      name="username"
+                      class="auth-input"
+                      placeholder="e.g. OliverSmith"
+                      pattern="^[A-Za-z]+$"
+                      autocomplete="username"
+                      maxlength="16"
+                      required
+                    />
+                  </div>
+                  <div id="regUsernameFeedback" class="field-feedback"></div>
+                </div>
+              </div>
+
+              <!-- 2. Role Field -->
+              <div class="col-md-6">
+                <div class="form-group mb-0">
+                  <label for="regRole" class="auth-label">
+                    <span>Select Role <span class="req-star">*</span></span>
+                    <span class="auth-label-hint">Required</span>
+                  </label>
+                  <div class="auth-input-wrap">
+                    <i class="bi bi-person-badge auth-input-icon"></i>
+                    <select
+                      id="regRole"
+                      name="role"
+                      class="auth-select"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Choose your role...
+                      </option>
+                      <option value="customer">Customer / Guest Diner</option>
+                      <option value="chef">Head Chef / Kitchen Staff</option>
+                      <option value="manager">Restaurant Manager</option>
+                      <option value="delivery">Delivery Partner</option>
+                      <option value="admin">Admin / Owner</option>
+                    </select>
+                  </div>
+                  <div id="regRoleFeedback" class="field-feedback"></div>
+                </div>
+              </div>
+
+              <!-- 3. Email Field -->
+              <div class="col-12">
+                <div class="form-group mb-0">
+                  <label for="regEmail" class="auth-label">
+                    <span>Email Address <span class="req-star">*</span></span>
+                    <span class="auth-label-hint">Required</span>
+                  </label>
+                  <div class="auth-input-wrap">
+                    <i class="bi bi-envelope auth-input-icon"></i>
+                    <input
+                      type="email"
+                      id="regEmail"
+                      name="email"
+                      class="auth-input"
+                      placeholder="you@stacklyfood.co.uk"
+                      autocomplete="email"
+                      required
+                    />
+                  </div>
+                  <div id="regEmailFeedback" class="field-feedback"></div>
+                </div>
+              </div>
+
+              <!-- 4. Password Field (with Weak Password Validation) -->
+              <div class="col-md-6">
+                <div class="form-group mb-0">
+                  <label for="regPassword" class="auth-label">
+                    <span>Password <span class="req-star">*</span></span>
+                    <span class="auth-label-hint">Strong required</span>
+                  </label>
+                  <div class="auth-input-wrap">
+                    <i class="bi bi-lock auth-input-icon"></i>
+                    <input
+                      type="password"
+                      id="regPassword"
+                      name="password"
+                      class="auth-input"
+                      placeholder="Create password"
+                      autocomplete="new-password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="password-toggle-btn"
+                      id="toggleRegPassword"
+                      aria-label="Toggle password visibility"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div id="regPasswordFeedback" class="field-feedback"></div>
+                </div>
+              </div>
+
+              <!-- 5. Confirm Password Field -->
+              <div class="col-md-6">
+                <div class="form-group mb-0">
+                  <label for="regConfirmPassword" class="auth-label">
+                    <span
+                      >Confirm Password <span class="req-star">*</span></span
+                    >
+                    <span class="auth-label-hint">Must match</span>
+                  </label>
+                  <div class="auth-input-wrap">
+                    <i class="bi bi-shield-lock auth-input-icon"></i>
+                    <input
+                      type="password"
+                      id="regConfirmPassword"
+                      name="confirmPassword"
+                      class="auth-input"
+                      placeholder="Re-enter password"
+                      autocomplete="new-password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="password-toggle-btn"
+                      id="toggleRegConfirmPassword"
+                      aria-label="Toggle confirm password visibility"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div
+                    id="regConfirmPasswordFeedback"
+                    class="field-feedback"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Live Weak Password Strength Meter -->
+              <div class="col-12">
+                <div class="password-strength-box mt-0" id="regStrengthBox">
+                  <div class="strength-header">
+                    <span>Password Strength</span>
+                    <span id="regStrengthLabel">Enter password</span>
+                  </div>
+                  <div
+                    class="strength-bars"
+                    id="regStrengthBars"
+                    data-score="0"
+                  >
+                    <div class="strength-bar-seg"></div>
+                    <div class="strength-bar-seg"></div>
+                    <div class="strength-bar-seg"></div>
+                    <div class="strength-bar-seg"></div>
+                  </div>
+                  <ul class="pw-criteria-list" id="regPwCriteria">
+                    <li class="pw-criteria-item" data-rule="length">
+                      <i class="bi bi-circle"></i> 8+ Chars
+                    </li>
+                    <li class="pw-criteria-item" data-rule="upper">
+                      <i class="bi bi-circle"></i> Uppercase
+                    </li>
+                    <li class="pw-criteria-item" data-rule="lower">
+                      <i class="bi bi-circle"></i> Lowercase
+                    </li>
+                    <li class="pw-criteria-item" data-rule="number">
+                      <i class="bi bi-circle"></i> Number
+                    </li>
+                    <li class="pw-criteria-item" data-rule="special">
+                      <i class="bi bi-circle"></i> Special (@#$%)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 6. Terms & Conditions Checkbox (Required) -->
+              <div class="col-12">
+                <div class="form-group mb-2">
+                  <div class="auth-check-row mb-1">
+                    <label class="custom-check-label" for="regTerms">
+                      <input
+                        type="checkbox"
+                        id="regTerms"
+                        name="terms"
+                        class="custom-check-input"
+                        required
+                      />
+                      <span>
+                        I agree to the Stackly
+                        <a href="#">Terms &amp; Conditions</a> and Dining
+                        Privacy Policy
+                        <span class="req-star text-danger">*</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div id="regTermsFeedback" class="field-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-auth-submit" id="regSubmitBtn">
+              <span>Complete Registration</span>
+              <i class="bi bi-check2-circle"></i>
+            </button>
+          </form>
+
+          <!-- Switch to Login & Secondary Back to Home -->
+          <div class="auth-switch-prompt">
+            Already have a Stackly account?
+            <a href="login.html">Sign In Here</a>
+          </div>
+
+          <div class="auth-bottom-home-wrap">
+            <a href="../index.html" class="link-back-home-inline">
+              <i class="bi bi-house-heart-fill"></i> Back to Home Page
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Mini Footer -->
+    <footer class="auth-mini-footer">
+      © 2026 Stackly Food &amp; Restaurant · 24 Covent Garden Piazza, London
+      WC2E 8RF
+    </footer>
+
+    <!-- ============ REGISTER VALIDATION & REDIRECT SCRIPT ============ -->
+    <script>
+      (function () {
+        "use strict";
+
+        const registerForm = document.getElementById("registerForm");
+        const usernameInput = document.getElementById("regUsername");
+        const usernameWrap = document.getElementById("usernameInputWrap");
+        const roleInput = document.getElementById("regRole");
+        const emailInput = document.getElementById("regEmail");
+        const passwordInput = document.getElementById("regPassword");
+        const confirmPasswordInput =
+          document.getElementById("regConfirmPassword");
+        const termsInput = document.getElementById("regTerms");
+
+        const togglePwBtn = document.getElementById("toggleRegPassword");
+        const toggleConfirmPwBtn = document.getElementById(
+          "toggleRegConfirmPassword",
+        );
+
+        const usernameFeedback = document.getElementById("regUsernameFeedback");
+        const roleFeedback = document.getElementById("regRoleFeedback");
+        const emailFeedback = document.getElementById("regEmailFeedback");
+        const passwordFeedback = document.getElementById("regPasswordFeedback");
+        const confirmPasswordFeedback = document.getElementById(
+          "regConfirmPasswordFeedback",
+        );
+        const termsFeedback = document.getElementById("regTermsFeedback");
+
+        const strengthBars = document.getElementById("regStrengthBars");
+        const strengthLabel = document.getElementById("regStrengthLabel");
+        const criteriaItems = document.querySelectorAll(
+          "#regPwCriteria .pw-criteria-item",
+        );
+
+        const alertBanner = document.getElementById("regAlertBanner");
+        const alertIcon = document.getElementById("regAlertIcon");
+        const alertText = document.getElementById("regAlertText");
+
+        function showAlert(type, message) {
+          alertBanner.className =
+            "auth-alert show " +
+            (type === "success"
+              ? "alert-success-custom"
+              : "alert-error-custom");
+          alertIcon.className =
+            type === "success"
+              ? "bi bi-check-circle-fill"
+              : "bi bi-exclamation-triangle-fill";
+          alertText.textContent = message;
+        }
+
+        function setFieldState(inputEl, feedbackEl, state, msg) {
+          if (inputEl) {
+            inputEl.classList.toggle("is-invalid", state === "error");
+            inputEl.classList.toggle("is-valid", state === "success");
+          }
+          if (!feedbackEl) return;
+          if (state === "error" && msg) {
+            feedbackEl.className = "field-feedback error";
+            feedbackEl.innerHTML = `<i class="bi bi-exclamation-circle-fill"></i> <span>${msg}</span>`;
+          } else if (state === "warning" && msg) {
+            feedbackEl.className = "field-feedback warning";
+            feedbackEl.innerHTML = `<i class="bi bi-shield-exclamation"></i> <span>${msg}</span>`;
+          } else if (state === "success" && msg) {
+            feedbackEl.className = "field-feedback success";
+            feedbackEl.innerHTML = `<i class="bi bi-check-circle-fill"></i> <span>${msg}</span>`;
+          } else {
+            feedbackEl.className = "field-feedback";
+            feedbackEl.innerHTML = "";
+          }
+        }
+
+        // =========================================================================
+        // REQUIREMENT 7: Prevent numbers, special characters, and spaces in Username
+        // =========================================================================
+        function triggerBlockedKeyHint(reason) {
+          if (usernameWrap) {
+            usernameWrap.classList.remove("shake-field");
+            void usernameWrap.offsetWidth; // trigger reflow
+            usernameWrap.classList.add("shake-field");
+          }
+          setFieldState(
+            usernameInput,
+            usernameFeedback,
+            "warning",
+            reason ||
+              "Only letters (A–Z) are allowed. Numbers, spaces & symbols are blocked.",
+          );
+        }
+
+        // 1. Block on keydown (prevents typing numbers, spaces, or special characters)
+        usernameInput.addEventListener("keydown", (e) => {
+          const allowedControlKeys = [
+            "Backspace",
+            "Delete",
+            "Tab",
+            "Escape",
+            "Enter",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowUp",
+            "ArrowDown",
+            "Home",
+            "End",
+          ];
+          if (
+            allowedControlKeys.includes(e.key) ||
+            e.ctrlKey ||
+            e.metaKey ||
+            e.altKey
+          ) {
+            return;
+          }
+
+          if (e.key === " " || e.code === "Space") {
+            e.preventDefault();
+            triggerBlockedKeyHint("Spaces are not allowed in username.");
+            return;
+          }
+
+          if (/[0-9]/.test(e.key)) {
+            e.preventDefault();
+            triggerBlockedKeyHint("Numbers are not allowed in username.");
+            return;
+          }
+
+          if (e.key.length === 1 && !/^[a-zA-Z]$/.test(e.key)) {
+            e.preventDefault();
+            triggerBlockedKeyHint(
+              "Special characters are not allowed in username.",
+            );
+          }
+        });
+
+        // 2. Block on beforeinput (handles mobile keyboards & IME composition)
+        usernameInput.addEventListener("beforeinput", (e) => {
+          if (typeof e.data === "string" && /[^a-zA-Z]/.test(e.data)) {
+            e.preventDefault();
+            triggerBlockedKeyHint(
+              "Only alphabets (A–Z) allowed — no spaces, numbers, or symbols.",
+            );
+          }
+        });
+
+        // 3. Sanitize on paste (strips any non-letters from pasted text)
+        usernameInput.addEventListener("paste", (e) => {
+          e.preventDefault();
+          const pasted = (e.clipboardData || window.clipboardData).getData(
+            "text",
+          );
+          const cleaned = pasted.replace(/[^a-zA-Z]/g, "");
+          const start = usernameInput.selectionStart || 0;
+          const end = usernameInput.selectionEnd || 0;
+          const current = usernameInput.value;
+          usernameInput.value =
+            current.slice(0, start) + cleaned + current.slice(end);
+
+          if (pasted !== cleaned) {
+            triggerBlockedKeyHint(
+              "Removed numbers, spaces, or special characters from pasted text.",
+            );
+          } else {
+            validateUsername();
+          }
+        });
+
+        // 4. Fallback sanitize on input event & validate
+        usernameInput.addEventListener("input", () => {
+          const raw = usernameInput.value;
+          const cleaned = raw.replace(/[^a-zA-Z]/g, "");
+          if (raw !== cleaned) {
+            usernameInput.value = cleaned;
+            triggerBlockedKeyHint(
+              "Only letters (A–Z) are allowed in username.",
+            );
+            return;
+          }
+          validateUsername();
+        });
+
+        function validateUsername() {
+          const val = usernameInput.value;
+          if (!val) {
+            setFieldState(
+              usernameInput,
+              usernameFeedback,
+              "error",
+              "Username is required.",
+            );
+            return false;
+          }
+          if (!/^[a-zA-Z]+$/.test(val)) {
+            setFieldState(
+              usernameInput,
+              usernameFeedback,
+              "error",
+              "Username can only contain letters (no spaces, numbers, or symbols).",
+            );
+            return false;
+          }
+          if (val.length < 3) {
+            setFieldState(
+              usernameInput,
+              usernameFeedback,
+              "error",
+              "Username must be at least 3 letters.",
+            );
+            return false;
+          }
+          setFieldState(
+            usernameInput,
+            usernameFeedback,
+            "success",
+            "Username looks great!",
+          );
+          return true;
+        }
+
+        // Toggle password visibility buttons
+        function bindPasswordToggle(btn, input) {
+          if (!btn || !input) return;
+          btn.addEventListener("click", () => {
+            const isHidden = input.type === "password";
+            input.type = isHidden ? "text" : "password";
+            btn.innerHTML = isHidden
+              ? '<i class="bi bi-eye-slash"></i>'
+              : '<i class="bi bi-eye"></i>';
+          });
+        }
+        bindPasswordToggle(togglePwBtn, passwordInput);
+        bindPasswordToggle(toggleConfirmPwBtn, confirmPasswordInput);
+
+        // =========================================================================
+        // REQUIREMENT 6: Weak Password Validation
+        // =========================================================================
+        function evaluatePassword(pw) {
+          const rules = {
+            length: pw.length >= 8,
+            upper: /[A-Z]/.test(pw),
+            lower: /[a-z]/.test(pw),
+            number: /[0-9]/.test(pw),
+            special: /[^A-Za-z0-9\s]/.test(pw),
+          };
+          const metCount = Object.values(rules).filter(Boolean).length;
+          return {
+            rules,
+            metCount,
+            isStrong:
+              rules.length &&
+              rules.upper &&
+              rules.lower &&
+              rules.number &&
+              rules.special,
+          };
+        }
+
+        function validatePassword() {
+          const val = passwordInput.value;
+          const result = evaluatePassword(val);
+
+          criteriaItems.forEach((item) => {
+            const ruleName = item.getAttribute("data-rule");
+            const met = result.rules[ruleName];
+            item.classList.toggle("met", met);
+            const icon = item.querySelector("i");
+            if (icon) {
+              icon.className = met ? "bi bi-check-circle-fill" : "bi bi-circle";
+            }
+          });
+
+          if (!val) {
+            strengthBars.setAttribute("data-score", "0");
+            strengthLabel.textContent = "Enter password";
+            strengthLabel.style.color = "var(--ink-soft)";
+            setFieldState(
+              passwordInput,
+              passwordFeedback,
+              "error",
+              "Password is required.",
+            );
+            return false;
+          }
+
+          let barScore = 1;
+          if (result.metCount >= 5) barScore = 4;
+          else if (result.metCount === 4) barScore = 3;
+          else if (result.metCount === 3) barScore = 2;
+
+          strengthBars.setAttribute("data-score", String(barScore));
+
+          const labels = {
+            1: { text: "Weak Password", color: "#e03131" },
+            2: { text: "Weak / Fair", color: "#f08c00" },
+            3: { text: "Almost Strong", color: "#d98a1d" },
+            4: { text: "Strong Password", color: "var(--basil)" },
+          };
+          strengthLabel.textContent = labels[barScore].text;
+          strengthLabel.style.color = labels[barScore].color;
+
+          if (!result.isStrong) {
+            const missing = [];
+            if (!result.rules.length) missing.push("8+ chars");
+            if (!result.rules.upper) missing.push("uppercase");
+            if (!result.rules.lower) missing.push("lowercase");
+            if (!result.rules.number) missing.push("number");
+            if (!result.rules.special) missing.push("special char");
+
+            setFieldState(
+              passwordInput,
+              passwordFeedback,
+              "error",
+              "Weak password! Missing: " + missing.join(", ") + ".",
+            );
+            return false;
+          }
+
+          setFieldState(
+            passwordInput,
+            passwordFeedback,
+            "success",
+            "Strong password!",
+          );
+          return true;
+        }
+
+        // =========================================================================
+        // REQUIREMENT 5: Check whether Password and Confirm Password match
+        // =========================================================================
+        function validateConfirmPassword() {
+          const pw = passwordInput.value;
+          const confirmPw = confirmPasswordInput.value;
+
+          if (!confirmPw) {
+            confirmPasswordInput.setCustomValidity(
+              "Confirm password is required.",
+            );
+            setFieldState(
+              confirmPasswordInput,
+              confirmPasswordFeedback,
+              "error",
+              "Please confirm your password.",
+            );
+            return false;
+          }
+
+          if (pw !== confirmPw) {
+            confirmPasswordInput.setCustomValidity("Passwords do not match.");
+            setFieldState(
+              confirmPasswordInput,
+              confirmPasswordFeedback,
+              "error",
+              "Passwords do not match.",
+            );
+            return false;
+          }
+
+          confirmPasswordInput.setCustomValidity("");
+          setFieldState(
+            confirmPasswordInput,
+            confirmPasswordFeedback,
+            "success",
+            "Passwords match!",
+          );
+          return true;
+        }
+
+        function validateRole() {
+          if (!roleInput.value) {
+            setFieldState(
+              roleInput,
+              roleFeedback,
+              "error",
+              "Please select a role.",
+            );
+            return false;
+          }
+          setFieldState(roleInput, roleFeedback, "success", "");
+          return true;
+        }
+
+        function validateEmail() {
+          const val = emailInput.value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          if (!val) {
+            setFieldState(
+              emailInput,
+              emailFeedback,
+              "error",
+              "Email address is required.",
+            );
+            return false;
+          }
+          if (!emailRegex.test(val)) {
+            setFieldState(
+              emailInput,
+              emailFeedback,
+              "error",
+              "Please enter a valid email address.",
+            );
+            return false;
+          }
+          setFieldState(emailInput, emailFeedback, "success", "");
+          return true;
+        }
+
+        function validateTerms() {
+          if (!termsInput.checked) {
+            setFieldState(
+              null,
+              termsFeedback,
+              "error",
+              "You must accept the Terms & Conditions to register.",
+            );
+            return false;
+          }
+          setFieldState(null, termsFeedback, "success", "");
+          return true;
+        }
+
+        roleInput.addEventListener("change", validateRole);
+        emailInput.addEventListener("input", validateEmail);
+        passwordInput.addEventListener("input", () => {
+          validatePassword();
+          if (confirmPasswordInput.value) {
+            validateConfirmPassword();
+          }
+        });
+        confirmPasswordInput.addEventListener("input", validateConfirmPassword);
+        termsInput.addEventListener("change", validateTerms);
+
+        // =========================================================================
+        // REQUIREMENT 8: After submit register form redirect to login page
+        // =========================================================================
+        registerForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const isUserOk = validateUsername();
+          const isRoleOk = validateRole();
+          const isEmailOk = validateEmail();
+          const isPwOk = validatePassword();
+          const isConfirmOk = validateConfirmPassword();
+          const isTermsOk = validateTerms();
+
+          if (
+            !isUserOk ||
+            !isRoleOk ||
+            !isEmailOk ||
+            !isPwOk ||
+            !isConfirmOk ||
+            !isTermsOk
+          ) {
+            showAlert(
+              "error",
+              "Please fix the highlighted fields above before submitting.",
+            );
+            return;
+          }
+
+          // Store user details for seamless login experience
+          try {
+            localStorage.setItem(
+              "stackly_registered_user",
+              JSON.stringify({
+                username: usernameInput.value.trim(),
+                role: roleInput.value,
+                email: emailInput.value.trim(),
+                registeredAt: new Date().toISOString(),
+              }),
+            );
+            sessionStorage.setItem("stackly_just_registered", "1");
+          } catch (err) {}
+
+          showAlert(
+            "success",
+            "Registration successful! Redirecting you to the Sign In page...",
+          );
+
+          const submitBtn = document.getElementById("regSubmitBtn");
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML =
+              '<span>Redirecting to Login...</span> <i class="bi bi-arrow-right-circle"></i>';
+          }
+
+          setTimeout(() => {
+            window.location.href = "login.html?registered=true";
+          }, 600);
+        });
+      })();
+    </script>
+  </body>
+</html>
