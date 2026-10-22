@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Role Dashboard | Stackly Food &amp; Restaurant — Covent Garden Kitchen
+    </title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <!-- Bootstrap 5.3 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Main Theme CSS & Dashboard CSS -->
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="dash-wrapper">
+      <!-- ============ MOBILE SIDEBAR BACKDROP ============ -->
+      <div class="dash-sidebar-backdrop" id="dashSidebarBackdrop"></div>
+
+      <!-- ============ ROLE-BASED SIDEBAR ============ -->
+      <aside class="dash-sidebar" id="dashSidebar" aria-label="Role Navigation">
+        <!-- Brand Header -->
+        <div class="dash-sidebar-header">
+          <a href="../index.html" class="dash-brand" aria-label="Stackly Home">
+            <img
+              src="../assets/images/logoStackly.webp"
+              alt="Stackly Food & Restaurant Logo"
+            />
+          </a>
+          <button
+            type="button"
+            class="dash-sidebar-close"
+            id="closeSidebarBtn"
+            aria-label="Close Sidebar Menu"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- Logged-In User & Role Card -->
+        <div class="dash-role-profile">
+          <div class="dash-role-profile-top">
+            <div class="dash-avatar" id="sidebarAvatar">S</div>
+            <div class="dash-user-meta">
+              <p class="dash-user-name" id="sidebarUserName">Stackly Member</p>
+              <p class="dash-user-email" id="sidebarUserEmail">
+                you@stacklyfood.co.uk
+              </p>
+            </div>
+          </div>
+          <div class="dash-role-pill" id="sidebarRolePill">
+            <i class="bi bi-person-badge-fill"></i>
+            <span>Customer / Guest Diner</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Role Sidebar Navigation -->
+        <div class="dash-sidebar-menu-wrap">
+          <div class="dash-menu-label" id="sidebarMenuRoleHeading">
+            Role Navigation
+          </div>
+          <ul class="dash-sidebar-nav" id="sidebarNavList">
+            <!-- Populated dynamically by dashboard.js based on login role -->
+          </ul>
+        </div>
+
+        <!-- Sidebar Footer: Live Kitchen Status & Logout -->
+        <div class="dash-sidebar-footer">
+          <div class="dash-kitchen-live-box">
+            <span class="live-dot"></span>
+            <span id="sidebarKitchenNote">
+              Brick Oven #1 Firing at 465°C · Express Pass
+            </span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ============ MAIN DASHBOARD PANEL ============ -->
+      <div class="dash-main">
+        <!-- Sticky Topbar -->
+        <header class="dash-topbar">
+          <div class="dash-topbar-left">
+            <button
+              type="button"
+              class="btn-sidebar-toggle"
+              id="mobileSidebarToggle"
+              aria-label="Open Sidebar Menu"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+            <div class="dash-page-heading">
+              <h1 id="dashTopTitle">
+                Covent Garden <span class="accent">Dashboard</span>
+              </h1>
+              <p class="dash-page-subtitle" id="dashTopSubtitle">
+                24 Covent Garden Piazza, London WC2E 8RF · Role-Based Culinary
+                Portal
+              </p>
+            </div>
+          </div>
+
+          <div class="dash-topbar-right">
+            <!-- Empty/# link and action button (redirect to 404 per Requirement 7) -->
+            <a
+              href="#"
+              class="dash-icon-action"
+              title="Kitchen Pass Alerts"
+              aria-label="Kitchen Pass Alerts"
+            >
+              <i class="bi bi-bell-fill"></i>
+              <span class="notif-dot"></span>
+            </a>
+            <button
+              type="button"
+              class="dash-icon-action"
+              title="Quick Kitchen Print"
+              aria-label="Quick Kitchen Print"
+            >
+              <i class="bi bi-printer-fill"></i>
+            </button>
+            <a href="../index.html" class="btn-dash-outline">
+              <i class="bi bi-house-heart-fill text-danger"></i>
+              <span class="d-none d-sm-inline">Home Page</span>
+            </a>
+            <!-- Logout Button (excluded from 404 redirect) -->
+            <button
+              type="button"
+              class="btn-topbar-logout"
+              id="topbarLogoutBtn"
+            >
+              <i class="bi bi-box-arrow-right"></i>
+              <span>Logout</span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="dash-content">
+          <div class="container-fluid px-0">
+            <!-- Submitted Login Form Data & Active Session Showcase Banner -->
+            <section
+              class="login-session-banner"
+              id="loginDataBanner"
+              aria-label="Submitted Login Form Data"
+            >
+              <!-- Populated dynamically with exact Role, Email, Password & Remember Me submitted on login.html -->
+            </section>
+
+            <!-- Dynamic Sidebar Section View (KPI Cards + Responsive Table + Equal-Height Cards) -->
+            <section id="dashDynamicView" aria-live="polite">
+              <!-- Populated dynamically when clicking sidebar items -->
+            </section>
+          </div>
+        </main>
+
+        <!-- Dashboard Footer -->
+        <footer class="dash-footer">
+          <div>
+            © 2026 <strong>Stackly Food &amp; Restaurant</strong> · 24 Covent
+            Garden Piazza, London WC2E 8RF
+          </div>
+          <div class="dash-footer-links">
+            <a href="../index.html">Home</a>
+            <a href="menu.html">Full Menu</a>
+            <a href="reserve.html">Reserve Table</a>
+            <a href="#">Kitchen Support</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Role-Based Dashboard & 404 Redirect Script -->
+    <script src="../assets/js/dashboard.js"></script>
+  </body>
+</html>

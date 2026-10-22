@@ -584,34 +584,58 @@
             return;
           }
 
-          // Save session state
+          // Save session state with all entered login form data
+          const selectedRoleText = roleInput.options[roleInput.selectedIndex]
+            ? roleInput.options[roleInput.selectedIndex].text.trim()
+            : roleInput.value;
+
+          const sessionPayload = {
+            role: roleInput.value,
+            roleLabel: selectedRoleText,
+            email: emailInput.value.trim(),
+            password: passwordInput.value,
+            rememberMe: rememberInput.checked,
+            username:
+              savedUser && savedUser.username
+                ? savedUser.username
+                : emailInput.value.trim().split("@")[0],
+            loginTime: new Date().toISOString(),
+          };
+
           try {
             localStorage.setItem(
               "stackly_active_session",
-              JSON.stringify({
-                role: roleInput.value,
-                email: emailInput.value.trim(),
-                rememberMe: rememberInput.checked,
-                loginTime: new Date().toISOString(),
-              }),
+              JSON.stringify(sessionPayload),
+            );
+            sessionStorage.setItem(
+              "stackly_active_session",
+              JSON.stringify(sessionPayload),
             );
           } catch (err) {}
 
           showAlert(
             "success",
-            "Signed in successfully! Welcome back to Stackly Kitchen. Redirecting to Home...",
+            "Signed in successfully! Welcome back to Stackly Kitchen. Redirecting to your Role Dashboard...",
           );
 
           const submitBtn = document.getElementById("loginSubmitBtn");
           if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.innerHTML =
-              '<span>Signing In...</span> <i class="bi bi-hourglass-split"></i>';
+              '<span>Opening Dashboard...</span> <i class="bi bi-hourglass-split"></i>';
           }
 
+          const queryParams = new URLSearchParams({
+            role: sessionPayload.role,
+            roleLabel: sessionPayload.roleLabel,
+            email: sessionPayload.email,
+            rememberMe: sessionPayload.rememberMe ? "Yes (Remembered)" : "No",
+            loginTime: sessionPayload.loginTime,
+          });
+
           setTimeout(() => {
-            window.location.href = "../index.html";
-          }, 800);
+            window.location.href = "dashboard.html?" + queryParams.toString();
+          }, 700);
         });
 
         // Redirect empty links ("") or "#" links to 404 page

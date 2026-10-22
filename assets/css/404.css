@@ -106,6 +106,8 @@ body.error-404-body {
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(90%) saturate(4000%)
+    hue-rotate(345deg) brightness(90%) contrast(110%);
 }
 
 .error-brand:hover img {
