@@ -600,24 +600,147 @@
       });
     });
 
-    // Forms
-    const bindForm = (formId, msgId) => {
-      const form = document.getElementById(formId);
-      const msg = document.getElementById(msgId);
-      if (form) {
-        form.addEventListener("submit", (e) => {
+    // Forms: enforce required fields, strict keystroke blocking for username & number fields, and redirect to 404 on submit
+    const allowedControlKeys = [
+      "Backspace",
+      "Delete",
+      "Tab",
+      "Escape",
+      "Enter",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Home",
+      "End",
+    ];
+
+    // Prevent numbers and special characters in Username / Name fields
+    const usernameFields = document.querySelectorAll(
+      ".input-username, input[placeholder*='Name' i], input[placeholder*='Username' i]",
+    );
+    usernameFields.forEach((input) => {
+      if (input.readOnly) return;
+
+      input.addEventListener("keydown", (e) => {
+        if (
+          allowedControlKeys.includes(e.key) ||
+          e.ctrlKey ||
+          e.metaKey ||
+          e.altKey
+        ) {
+          return;
+        }
+        if (e.key.length === 1 && !/^[a-zA-Z ]$/.test(e.key)) {
           e.preventDefault();
-          if (msg) msg.style.display = "block";
-          form.reset();
-          setTimeout(() => {
-            if (msg) msg.style.display = "none";
-          }, 5500);
+        }
+      });
+
+      input.addEventListener("beforeinput", (e) => {
+        if (typeof e.data === "string" && /[^a-zA-Z ]/.test(e.data)) {
+          e.preventDefault();
+        }
+      });
+
+      input.addEventListener("paste", (e) => {
+        e.preventDefault();
+        const pasted = (e.clipboardData || window.clipboardData).getData(
+          "text",
+        );
+        const cleaned = pasted.replace(/[^a-zA-Z ]/g, "");
+        const start = input.selectionStart || 0;
+        const end = input.selectionEnd || 0;
+        const current = input.value;
+        input.value = current.slice(0, start) + cleaned + current.slice(end);
+      });
+
+      input.addEventListener("input", () => {
+        const cleaned = input.value.replace(/[^a-zA-Z ]/g, "");
+        if (input.value !== cleaned) {
+          input.value = cleaned;
+        }
+      });
+    });
+
+    // Prevent alphabets and special characters in Number / Phone fields
+    const numberFields = document.querySelectorAll(
+      ".input-number, input[type='tel'], input[type='number']",
+    );
+    numberFields.forEach((input) => {
+      if (input.readOnly) return;
+
+      input.addEventListener("keydown", (e) => {
+        if (
+          allowedControlKeys.includes(e.key) ||
+          e.ctrlKey ||
+          e.metaKey ||
+          e.altKey
+        ) {
+          return;
+        }
+        if (e.key.length === 1 && !/^[0-9]$/.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+
+      input.addEventListener("beforeinput", (e) => {
+        if (typeof e.data === "string" && /[^0-9]/.test(e.data)) {
+          e.preventDefault();
+        }
+      });
+
+      input.addEventListener("paste", (e) => {
+        e.preventDefault();
+        const pasted = (e.clipboardData || window.clipboardData).getData(
+          "text",
+        );
+        const cleaned = pasted.replace(/[^0-9]/g, "");
+        const start = input.selectionStart || 0;
+        const end = input.selectionEnd || 0;
+        const current = input.value;
+        input.value = current.slice(0, start) + cleaned + current.slice(end);
+      });
+
+      input.addEventListener("input", () => {
+        const cleaned = input.value.replace(/[^0-9]/g, "");
+        if (input.value !== cleaned) {
+          input.value = cleaned;
+        }
+      });
+    });
+
+    // Ensure all fields in forms are required and redirect to 404 page on submit
+    document.querySelectorAll("form").forEach((form) => {
+      form.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.required = true;
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Validate that text/textarea fields are not just whitespace
+        let allValid = true;
+        form.querySelectorAll("input, select, textarea").forEach((field) => {
+          if (
+            !field.readOnly &&
+            typeof field.value === "string" &&
+            (field.tagName === "TEXTAREA" || field.type === "text")
+          ) {
+            if (!field.value.trim()) {
+              field.value = "";
+              allValid = false;
+            }
+          }
         });
-      }
-    };
-    bindForm("reservationForm", "reservationSuccess");
-    bindForm("contactForm", "contactSuccess");
-    bindForm("newsletterForm", "newsletterMsg");
+
+        if (!allValid || !form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        window.location.href = rootPrefix + "pages/404.html";
+      });
+    });
 
     // Swiper Testimonials
     if (window.Swiper && document.querySelector(".testiSwiper")) {

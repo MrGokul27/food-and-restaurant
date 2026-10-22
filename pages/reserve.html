@@ -257,7 +257,8 @@
                     <div class="col-md-6">
                       <input
                         type="text"
-                        class="form-control-custom"
+                        class="form-control-custom input-username"
+                        maxlength="16"
                         placeholder="Full Name"
                         required
                       />
@@ -265,8 +266,11 @@
                     <div class="col-md-6">
                       <input
                         type="tel"
-                        class="form-control-custom"
+                        class="form-control-custom input-number"
                         placeholder="Phone Number (+91 9876543210)"
+                        minlength="10"
+                        maxlength="10"
+                        inputmode="numeric"
                         required
                       />
                     </div>
@@ -308,12 +312,14 @@
                         class="form-control-custom"
                         value="Booth B1 — Main Dining Hall (2-4 Guests)"
                         readonly
+                        required
                       />
                     </div>
                     <div class="col-12">
                       <textarea
                         class="form-control-custom"
                         placeholder="Dietary notes, highchair requests, or celebration message..."
+                        required
                       ></textarea>
                     </div>
                   </div>
