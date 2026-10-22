@@ -586,6 +586,12 @@
       }, 1000);
     }
 
+    // Set min date on all date inputs to today (prevent past dates)
+    const today = new Date().toISOString().split("T")[0];
+    document.querySelectorAll("input[type='date']").forEach((input) => {
+      input.setAttribute("min", today);
+    });
+
     // Interactive Table Spot Selector on Reserve Page
     document.querySelectorAll(".table-spot").forEach((spot) => {
       spot.addEventListener("click", () => {
@@ -631,13 +637,13 @@
         ) {
           return;
         }
-        if (e.key.length === 1 && !/^[a-zA-Z ]$/.test(e.key)) {
+        if (e.key.length === 1 && !/^[a-zA-Z]$/.test(e.key)) {
           e.preventDefault();
         }
       });
 
       input.addEventListener("beforeinput", (e) => {
-        if (typeof e.data === "string" && /[^a-zA-Z ]/.test(e.data)) {
+        if (typeof e.data === "string" && /[^a-zA-Z]/.test(e.data)) {
           e.preventDefault();
         }
       });
@@ -647,7 +653,7 @@
         const pasted = (e.clipboardData || window.clipboardData).getData(
           "text",
         );
-        const cleaned = pasted.replace(/[^a-zA-Z ]/g, "");
+        const cleaned = pasted.replace(/[^a-zA-Z]/g, "");
         const start = input.selectionStart || 0;
         const end = input.selectionEnd || 0;
         const current = input.value;
@@ -655,7 +661,7 @@
       });
 
       input.addEventListener("input", () => {
-        const cleaned = input.value.replace(/[^a-zA-Z ]/g, "");
+        const cleaned = input.value.replace(/[^a-zA-Z]/g, "");
         if (input.value !== cleaned) {
           input.value = cleaned;
         }
