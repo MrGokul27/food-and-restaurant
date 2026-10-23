@@ -1203,19 +1203,33 @@
                 <form id="reservationForm">
                   <div class="row g-3">
                     <div class="col-md-6">
+                      <label for="homeResName" class="visually-hidden"
+                        >Full Name</label
+                      >
                       <input
                         type="text"
+                        id="homeResName"
+                        name="fullName"
                         class="form-control-custom input-username"
                         placeholder="Full Name"
+                        aria-label="Full Name"
+                        autocomplete="name"
                         maxlength="16"
                         required
                       />
                     </div>
                     <div class="col-md-6">
+                      <label for="homeResPhone" class="visually-hidden"
+                        >Phone Number</label
+                      >
                       <input
                         type="tel"
+                        id="homeResPhone"
+                        name="phone"
                         class="form-control-custom input-number"
                         placeholder="Phone (+91 9876543210)"
+                        aria-label="Phone Number"
+                        autocomplete="tel"
                         inputmode="numeric"
                         minlength="10"
                         maxlength="10"
@@ -1223,43 +1237,88 @@
                       />
                     </div>
                     <div class="col-md-6">
+                      <label for="homeResEmail" class="visually-hidden"
+                        >Email Address</label
+                      >
                       <input
                         type="email"
+                        id="homeResEmail"
+                        name="email"
                         class="form-control-custom"
                         placeholder="Email Address"
+                        aria-label="Email Address"
+                        autocomplete="email"
                         required
                       />
                     </div>
                     <div class="col-md-6">
-                      <select class="form-select-custom" required>
+                      <label for="homeResGuests" class="visually-hidden"
+                        >Number Of Guests</label
+                      >
+                      <select
+                        id="homeResGuests"
+                        name="guests"
+                        class="form-select-custom"
+                        aria-label="Number Of Guests"
+                        autocomplete="off"
+                        required
+                      >
                         <option value="" disabled selected>
                           Number Of Guests
                         </option>
-                        <option>1 - 2 Guests</option>
-                        <option>3 - 4 Guests</option>
-                        <option>5 - 6 Guests</option>
-                        <option>7+ Guests (Private Booth)</option>
+                        <option value="1-2">1 - 2 Guests</option>
+                        <option value="3-4">3 - 4 Guests</option>
+                        <option value="5-6">5 - 6 Guests</option>
+                        <option value="7+">7+ Guests (Private Booth)</option>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <input type="date" class="form-control-custom" required />
+                      <label for="homeResDate" class="visually-hidden"
+                        >Reservation Date</label
+                      >
+                      <input
+                        type="date"
+                        id="homeResDate"
+                        name="reservationDate"
+                        class="form-control-custom"
+                        aria-label="Reservation Date"
+                        autocomplete="off"
+                        required
+                      />
                     </div>
                     <div class="col-md-6">
-                      <select class="form-select-custom" required>
+                      <label for="homeResTime" class="visually-hidden"
+                        >Preferred Dining Time</label
+                      >
+                      <select
+                        id="homeResTime"
+                        name="reservationTime"
+                        class="form-select-custom"
+                        aria-label="Preferred Dining Time"
+                        autocomplete="off"
+                        required
+                      >
                         <option value="" disabled selected>
                           Preferred Dining Time
                         </option>
-                        <option>12:30 PM (Lunch)</option>
-                        <option>02:00 PM (Afternoon)</option>
-                        <option>06:00 PM (Early Evening)</option>
-                        <option>07:30 PM (Prime Dinner)</option>
-                        <option>09:00 PM (Late Dinner)</option>
+                        <option value="12:30">12:30 PM (Lunch)</option>
+                        <option value="14:00">02:00 PM (Afternoon)</option>
+                        <option value="18:00">06:00 PM (Early Evening)</option>
+                        <option value="19:30">07:30 PM (Prime Dinner)</option>
+                        <option value="21:00">09:00 PM (Late Dinner)</option>
                       </select>
                     </div>
                     <div class="col-12">
+                      <label for="homeResNotes" class="visually-hidden"
+                        >Special Requests</label
+                      >
                       <textarea
+                        id="homeResNotes"
+                        name="specialRequests"
                         class="form-control-custom"
                         placeholder="Special requests — allergies, birthday celebration, booth seating..."
+                        aria-label="Special Requests"
+                        autocomplete="off"
                         required
                       ></textarea>
                     </div>
@@ -1511,34 +1570,62 @@
               <form id="contactForm">
                 <div class="row g-3">
                   <div class="col-md-6">
+                    <label for="homeContactName" class="visually-hidden"
+                      >Your Full Name</label
+                    >
                     <input
                       type="text"
+                      id="homeContactName"
+                      name="fullName"
                       class="form-control-custom input-username"
                       placeholder="Your Full Name"
+                      aria-label="Your Full Name"
+                      autocomplete="name"
                       maxlength="16"
                       required
                     />
                   </div>
                   <div class="col-md-6">
+                    <label for="homeContactEmail" class="visually-hidden"
+                      >Your Email Address</label
+                    >
                     <input
                       type="email"
+                      id="homeContactEmail"
+                      name="email"
                       class="form-control-custom"
                       placeholder="Your Email Address"
+                      aria-label="Your Email Address"
+                      autocomplete="email"
                       required
                     />
                   </div>
                   <div class="col-12">
+                    <label for="homeContactSubject" class="visually-hidden"
+                      >Subject</label
+                    >
                     <input
                       type="text"
+                      id="homeContactSubject"
+                      name="subject"
                       class="form-control-custom"
                       placeholder="Subject (e.g. Private Dining, Catering, Feedback)"
+                      aria-label="Subject"
+                      autocomplete="off"
                       required
                     />
                   </div>
                   <div class="col-12">
+                    <label for="homeContactMessage" class="visually-hidden"
+                      >Message</label
+                    >
                     <textarea
+                      id="homeContactMessage"
+                      name="message"
                       class="form-control-custom"
                       placeholder="How can our team help you?"
+                      aria-label="Message"
+                      autocomplete="off"
                       required
                     ></textarea>
                   </div>
@@ -1576,9 +1663,16 @@
             </div>
             <div class="col-lg-5">
               <form class="newsletter-form" id="newsletterForm">
+                <label for="homeNewsletterEmail" class="visually-hidden"
+                  >Email Address</label
+                >
                 <input
                   type="email"
+                  id="homeNewsletterEmail"
+                  name="newsletterEmail"
                   placeholder="Enter your email address"
+                  aria-label="Enter your email address"
+                  autocomplete="email"
                   required
                 />
                 <button type="submit">Subscribe</button>

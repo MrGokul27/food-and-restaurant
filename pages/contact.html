@@ -143,19 +143,33 @@
               <form id="contactForm">
                 <div class="row g-3">
                   <div class="col-md-6">
+                    <label for="contactFullName" class="visually-hidden"
+                      >Your Full Name</label
+                    >
                     <input
                       type="text"
+                      id="contactFullName"
+                      name="fullName"
                       class="form-control-custom input-username"
                       placeholder="Your Full Name"
+                      aria-label="Your Full Name"
+                      autocomplete="name"
                       maxlength="16"
                       required
                     />
                   </div>
                   <div class="col-md-6">
+                    <label for="contactPhone" class="visually-hidden"
+                      >Phone Number</label
+                    >
                     <input
                       type="tel"
+                      id="contactPhone"
+                      name="phone"
                       class="form-control-custom input-number"
                       placeholder="Phone (+91 9876543210)"
+                      aria-label="Phone Number"
+                      autocomplete="tel"
                       minlength="10"
                       maxlength="10"
                       inputmode="numeric"
@@ -163,29 +177,55 @@
                     />
                   </div>
                   <div class="col-md-6">
+                    <label for="contactEmail" class="visually-hidden"
+                      >Email Address</label
+                    >
                     <input
                       type="email"
+                      id="contactEmail"
+                      name="email"
                       class="form-control-custom"
                       placeholder="Email Address"
+                      aria-label="Email Address"
+                      autocomplete="email"
                       required
                     />
                   </div>
                   <div class="col-md-6">
-                    <select class="form-control-custom" required>
+                    <label for="contactDepartment" class="visually-hidden"
+                      >Enquiry Department</label
+                    >
+                    <select
+                      id="contactDepartment"
+                      name="department"
+                      class="form-control-custom"
+                      aria-label="Enquiry Department"
+                      autocomplete="off"
+                      required
+                    >
                       <option value="" disabled selected>
                         Enquiry Department
                       </option>
-                      <option>Table Reservations</option>
-                      <option>Private Vault &amp; Events</option>
-                      <option>Corporate Catering</option>
-                      <option>Allergens &amp; Dietary Info</option>
-                      <option>Press &amp; Partnerships</option>
+                      <option value="reservations">Table Reservations</option>
+                      <option value="events">Private Vault &amp; Events</option>
+                      <option value="catering">Corporate Catering</option>
+                      <option value="allergens">
+                        Allergens &amp; Dietary Info
+                      </option>
+                      <option value="press">Press &amp; Partnerships</option>
                     </select>
                   </div>
                   <div class="col-12">
+                    <label for="contactMessage" class="visually-hidden"
+                      >Your Message</label
+                    >
                     <textarea
+                      id="contactMessage"
+                      name="message"
                       class="form-control-custom"
                       placeholder="Tell us how we can help..."
+                      aria-label="Your Message"
+                      autocomplete="off"
                       required
                     ></textarea>
                   </div>

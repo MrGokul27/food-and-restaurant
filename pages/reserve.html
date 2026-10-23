@@ -255,19 +255,33 @@
                 <form id="reservationForm">
                   <div class="row g-3">
                     <div class="col-md-6">
+                      <label for="reserveFullName" class="visually-hidden"
+                        >Full Name</label
+                      >
                       <input
                         type="text"
+                        id="reserveFullName"
+                        name="fullName"
                         class="form-control-custom input-username"
                         maxlength="16"
                         placeholder="Full Name"
+                        aria-label="Full Name"
+                        autocomplete="name"
                         required
                       />
                     </div>
                     <div class="col-md-6">
+                      <label for="reservePhone" class="visually-hidden"
+                        >Phone Number</label
+                      >
                       <input
                         type="tel"
+                        id="reservePhone"
+                        name="phone"
                         class="form-control-custom input-number"
                         placeholder="Phone Number (+91 9876543210)"
+                        aria-label="Phone Number"
+                        autocomplete="tel"
                         minlength="10"
                         maxlength="10"
                         inputmode="numeric"
@@ -275,50 +289,101 @@
                       />
                     </div>
                     <div class="col-md-6">
+                      <label for="reserveEmail" class="visually-hidden"
+                        >Email Address</label
+                      >
                       <input
                         type="email"
+                        id="reserveEmail"
+                        name="email"
                         class="form-control-custom"
                         placeholder="Email Address"
+                        aria-label="Email Address"
+                        autocomplete="email"
                         required
                       />
                     </div>
                     <div class="col-md-6">
-                      <select class="form-select-custom" required>
+                      <label for="reservePartySize" class="visually-hidden"
+                        >Party Size</label
+                      >
+                      <select
+                        id="reservePartySize"
+                        name="partySize"
+                        class="form-select-custom"
+                        aria-label="Party Size"
+                        autocomplete="off"
+                        required
+                      >
                         <option value="" disabled selected>Party Size</option>
-                        <option>2 Guests</option>
-                        <option>3 - 4 Guests</option>
-                        <option>5 - 6 Guests</option>
-                        <option>7 - 10 Guests</option>
-                        <option>10+ Guests (Private Vault)</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3-4">3 - 4 Guests</option>
+                        <option value="5-6">5 - 6 Guests</option>
+                        <option value="7-10">7 - 10 Guests</option>
+                        <option value="10+">10+ Guests (Private Vault)</option>
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <input type="date" class="form-control-custom" required />
+                      <label for="reserveDate" class="visually-hidden"
+                        >Reservation Date</label
+                      >
+                      <input
+                        type="date"
+                        id="reserveDate"
+                        name="reservationDate"
+                        class="form-control-custom"
+                        aria-label="Reservation Date"
+                        autocomplete="off"
+                        required
+                      />
                     </div>
                     <div class="col-md-6">
-                      <select class="form-select-custom" required>
+                      <label for="reserveTimeSlot" class="visually-hidden"
+                        >Time Slot</label
+                      >
+                      <select
+                        id="reserveTimeSlot"
+                        name="timeSlot"
+                        class="form-select-custom"
+                        aria-label="Time Slot"
+                        autocomplete="off"
+                        required
+                      >
                         <option value="" disabled selected>Time Slot</option>
-                        <option>12:00 PM — Lunch</option>
-                        <option>01:30 PM — Afternoon</option>
-                        <option>05:30 PM — Pre-Theatre</option>
-                        <option>07:30 PM — Prime Dinner</option>
-                        <option>09:15 PM — Late Supper</option>
+                        <option value="12:00">12:00 PM — Lunch</option>
+                        <option value="13:30">01:30 PM — Afternoon</option>
+                        <option value="17:30">05:30 PM — Pre-Theatre</option>
+                        <option value="19:30">07:30 PM — Prime Dinner</option>
+                        <option value="21:15">09:15 PM — Late Supper</option>
                       </select>
                     </div>
                     <div class="col-12">
+                      <label for="selectedTableInput" class="visually-hidden"
+                        >Selected Table Spot</label
+                      >
                       <input
                         type="text"
                         id="selectedTableInput"
+                        name="selectedTable"
                         class="form-control-custom"
                         value="Booth B1 — Main Dining Hall (2-4 Guests)"
+                        aria-label="Selected Table Spot"
+                        autocomplete="off"
                         readonly
                         required
                       />
                     </div>
                     <div class="col-12">
+                      <label for="reserveDietaryNotes" class="visually-hidden"
+                        >Dietary Notes or Special Requests</label
+                      >
                       <textarea
+                        id="reserveDietaryNotes"
+                        name="dietaryNotes"
                         class="form-control-custom"
                         placeholder="Dietary notes, highchair requests, or celebration message..."
+                        aria-label="Dietary Notes or Special Requests"
+                        autocomplete="off"
                         required
                       ></textarea>
                     </div>
