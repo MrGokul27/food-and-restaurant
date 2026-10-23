@@ -538,8 +538,18 @@
     });
 
     // Swiper Testimonials
-    if (window.Swiper && document.querySelector(".testiSwiper")) {
-      new Swiper(".testiSwiper", {
+    const testiEl = document.querySelector(".testiSwiper");
+    if (window.Swiper && testiEl) {
+      const wrapper = testiEl.querySelector(".swiper-wrapper");
+      if (wrapper) {
+        const slides = Array.from(wrapper.querySelectorAll(".swiper-slide"));
+        if (slides.length > 0 && slides.length < 6) {
+          slides.forEach((slide) => {
+            wrapper.appendChild(slide.cloneNode(true));
+          });
+        }
+      }
+      new Swiper(testiEl, {
         slidesPerView: 1,
         spaceBetween: 24,
         loop: true,
