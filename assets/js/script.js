@@ -30,13 +30,9 @@
 <nav class="navbar navbar-expand-lg navbar-main" id="mainNav">
     <div class="container">
         <a class="brand-logo" data-nav-link="index.html" href="index.html">
-            <img data-logo-img src="assets/images/logoStackly.webp" alt="Stackly Food & Restaurant Logo">
+            <img data-logo-img src="" alt="Stackly Food & Restaurant Logo">
         </a>
         <div class="d-flex align-items-center gap-2 d-lg-none">
-            <a href="#" class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-label="View Cart">
-                <i class="bi bi-bag"></i>
-                <span class="cart-count">0</span>
-            </a>
             <button class="navbar-toggler border-0" type="button" id="mobileMenuBtn" aria-label="Toggle Menu">
                 <i class="bi bi-list" style="font-size:2rem; color:var(--ink);"></i>
             </button>
@@ -58,10 +54,6 @@
                 <a data-nav-link="pages/login.html" href="pages/login.html" class="nav-icon-btn" aria-label="Sign In or Register" title="Sign In / Register">
                     <i class="bi bi-person"></i>
                 </a>
-                <a href="#" class="nav-icon-btn d-none d-lg-inline-flex" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-label="Shopping Bag">
-                    <i class="bi bi-bag"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </a>
                 <a data-nav-link="pages/reserve.html" href="pages/reserve.html" class="btn-chili">Book A Table <i class="bi bi-arrow-up-right"></i></a>
             </div>
         </div>
@@ -74,7 +66,7 @@
         <div class="row g-4">
             <div class="col-lg-4">
                 <a class="brand-logo mb-3" data-nav-link="index.html" href="index.html" style="color:#fff;">
-                    <img data-logo-img src="assets/images/logoStackly.webp" alt="Stackly Food & Restaurant Logo">
+                    <img data-logo-img src="" alt="Stackly Food & Restaurant Logo">
                 </a>
                 <p>Artisanal wood-fired pizzas, flame-seared gourmet burgers, and British farm-to-table plates crafted with passion in the heart of Covent Garden, London.</p>
                 <div class="footer-social mt-3">
@@ -124,33 +116,7 @@
     </div>
     <a href="#" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
     <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
-</footer>
-<div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="cartCanvas">
-    <div class="offcanvas-header border-bottom">
-        <h5 class="display-font mb-0"><i class="bi bi-bag-check text-danger me-2"></i>Your Kitchen Order</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body d-flex flex-column">
-        <div id="cartItems" class="flex-grow-1">
-            <p class="text-center text-muted mt-5" id="cartEmptyMsg">Your order bag is empty.<br>Add something delicious from our menu!</p>
-        </div>
-        <div class="border-top pt-3 mt-3">
-            <div class="d-flex justify-content-between mb-3">
-                <strong>Estimated Total</strong>
-                <strong id="cartTotal" style="color:var(--chili);">£0.00</strong>
-            </div>
-            <a data-nav-link="pages/reserve.html" href="pages/reserve.html" class="btn-chili w-100 justify-content-center">Proceed to Checkout <i class="bi bi-arrow-right"></i></a>
-        </div>
-    </div>
-</div>
-<div class="toast-container">
-    <div id="cartToast" class="toast toast-cart align-items-center text-white border-0" style="background:var(--basil);" role="alert">
-        <div class="d-flex">
-            <div class="toast-body"><i class="bi bi-check-circle-fill me-2" style="color:var(--mustard);"></i><span id="toastMsg">Added to your order!</span></div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
-</div>`;
+</footer>`;
 
   async function loadCommonComponents() {
     const headerHolder = document.getElementById("header-placeholder");
@@ -185,7 +151,6 @@
     normalizeComponentPaths();
     highlightActiveNav();
     initHeaderAndScroll();
-    initCartSystem();
   }
 
   function normalizeComponentPaths() {
@@ -277,182 +242,6 @@
     }
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMobileMenu();
-    });
-  }
-
-  // Shopping Cart System
-  let cart = [];
-  try {
-    cart = JSON.parse(localStorage.getItem("stackly_cart") || "[]");
-  } catch (e) {
-    cart = [];
-  }
-
-  function saveCart() {
-    try {
-      localStorage.setItem("stackly_cart", JSON.stringify(cart));
-    } catch (e) {}
-  }
-
-  function renderCart() {
-    const cartItemsEl = document.getElementById("cartItems");
-    const cartTotalEl = document.getElementById("cartTotal");
-    const countBadges = document.querySelectorAll(".cart-count");
-
-    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-    countBadges.forEach((b) => {
-      b.textContent = totalQty;
-    });
-
-    if (!cartItemsEl || !cartTotalEl) return;
-
-    if (cart.length === 0) {
-      cartItemsEl.innerHTML = `<p class="text-center text-muted mt-5" id="cartEmptyMsg">Your order bag is empty.<br>Add something delicious from our menu!</p>`;
-      cartTotalEl.textContent = "£0.00";
-      return;
-    }
-
-    let total = 0;
-    cartItemsEl.innerHTML = cart
-      .map((item, idx) => {
-        const sub = item.price * item.qty;
-        total += sub;
-        return `
-            <div class="d-flex align-items-center justify-content-between py-2 border-bottom">
-                <div class="d-flex align-items-center gap-2">
-                    <img src="${item.img}" alt="${item.name}" style="width:48px;height:48px;border-radius:10px;object-fit:cover;">
-                    <div>
-                        <div class="fw-bold" style="font-size:0.9rem;color:var(--ink);">${item.name}</div>
-                        <small class="text-muted">£${item.price.toFixed(2)} × ${item.qty}</small>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                    <strong style="color:var(--chili);font-size:0.9rem;">£${sub.toFixed(2)}</strong>
-                    <button type="button" class="btn btn-sm text-danger p-0 remove-cart-item" data-idx="${idx}" aria-label="Remove"><i class="bi bi-trash3"></i></button>
-                </div>
-            </div>`;
-      })
-      .join("");
-
-    cartTotalEl.textContent = "£" + total.toFixed(2);
-
-    cartItemsEl.querySelectorAll(".remove-cart-item").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const idx = parseInt(btn.getAttribute("data-idx"), 10);
-        cart.splice(idx, 1);
-        saveCart();
-        renderCart();
-      });
-    });
-  }
-
-  function addToCart(name, price, img, qty = 1) {
-    const existing = cart.find((i) => i.name === name);
-    if (existing) {
-      existing.qty += qty;
-    } else {
-      cart.push({ name, price: parseFloat(price), img, qty });
-    }
-    saveCart();
-    renderCart();
-
-    const toastEl = document.getElementById("cartToast");
-    const toastMsg = document.getElementById("toastMsg");
-    if (toastMsg) toastMsg.textContent = `${qty}× ${name} added to order!`;
-    if (toastEl && window.bootstrap) {
-      const toast = new bootstrap.Toast(toastEl);
-      toast.show();
-    }
-  }
-
-  function initCartSystem() {
-    renderCart();
-
-    // Quick View Modal & Direct Add
-    let currentItem = null;
-    let currentQty = 1;
-
-    const qvModalEl = document.getElementById("quickViewModal");
-    const qvName = document.getElementById("qvName");
-    const qvDesc = document.getElementById("qvDesc");
-    const qvPrice = document.getElementById("qvPrice");
-    const qvImg = document.getElementById("qvImg");
-    const qvQty = document.getElementById("qvQty");
-    const qvStars = document.getElementById("qvStars");
-
-    document.querySelectorAll(".qv-trigger").forEach((card) => {
-      card.addEventListener("click", (e) => {
-        const name = card.getAttribute("data-name") || "Signature Dish";
-        const price = parseFloat(card.getAttribute("data-price") || "9.50");
-        const img = card.getAttribute("data-img") || "";
-        const desc = card.getAttribute("data-desc") || "";
-
-        if (e.target.closest(".mc-add") || !qvModalEl) {
-          e.stopPropagation();
-          addToCart(name, price, img, 1);
-          return;
-        }
-
-        currentItem = { name, price, img };
-        currentQty = 1;
-        if (qvName) qvName.textContent = name;
-        if (qvDesc) qvDesc.textContent = desc;
-        if (qvPrice) qvPrice.textContent = "£" + price.toFixed(2);
-        if (qvImg) qvImg.setAttribute("src", img);
-        if (qvQty) qvQty.textContent = "1";
-        if (qvStars) {
-          qvStars.innerHTML =
-            '<i class="bi bi-star-fill text-warning"></i>'.repeat(5);
-        }
-        if (window.bootstrap) {
-          new bootstrap.Modal(qvModalEl).show();
-        }
-      });
-    });
-
-    const qvMinus = document.getElementById("qvMinus");
-    const qvPlus = document.getElementById("qvPlus");
-    const qvAddCart = document.getElementById("qvAddCart");
-
-    if (qvMinus) {
-      qvMinus.addEventListener("click", () => {
-        if (currentQty > 1) {
-          currentQty--;
-          if (qvQty) qvQty.textContent = String(currentQty);
-        }
-      });
-    }
-    if (qvPlus) {
-      qvPlus.addEventListener("click", () => {
-        currentQty++;
-        if (qvQty) qvQty.textContent = String(currentQty);
-      });
-    }
-    if (qvAddCart) {
-      qvAddCart.addEventListener("click", () => {
-        if (currentItem) {
-          addToCart(
-            currentItem.name,
-            currentItem.price,
-            currentItem.img,
-            currentQty,
-          );
-          if (qvModalEl && window.bootstrap) {
-            const inst = bootstrap.Modal.getInstance(qvModalEl);
-            if (inst) inst.hide();
-          }
-        }
-      });
-    }
-
-    // Direct add-to-cart buttons on Menu page bundles
-    document.querySelectorAll(".direct-add-cart").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const name = btn.getAttribute("data-name");
-        const price = parseFloat(btn.getAttribute("data-price") || "15.00");
-        const img = btn.getAttribute("data-img") || "";
-        addToCart(name, price, img, 1);
-      });
     });
   }
 

@@ -9,11 +9,7 @@
           href="index.html"
           style="color: #fff"
         >
-          <img
-            data-logo-img
-            src="assets/images/logoStackly.webp"
-            alt="Stackly Food & Restaurant Logo"
-          />
+          <img data-logo-img src="" alt="Stackly Food & Restaurant Logo" />
         </a>
         <p>
           Artisanal wood-fired pizzas, flame-seared gourmet burgers, and British
@@ -150,67 +146,3 @@
     <i class="bi bi-arrow-up"></i>
   </button>
 </footer>
-
-<!-- Cart Offcanvas -->
-<div
-  class="offcanvas offcanvas-end offcanvas-cart"
-  tabindex="-1"
-  id="cartCanvas"
->
-  <div class="offcanvas-header border-bottom">
-    <h5 class="display-font mb-0">
-      <i class="bi bi-bag-check text-danger me-2"></i>Your Kitchen Order
-    </h5>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
-  </div>
-  <div class="offcanvas-body d-flex flex-column">
-    <div id="cartItems" class="flex-grow-1">
-      <p class="text-center text-muted mt-5" id="cartEmptyMsg">
-        Your order bag is empty.<br />Add something delicious from our menu!
-      </p>
-    </div>
-    <div class="border-top pt-3 mt-3">
-      <div class="d-flex justify-content-between mb-3">
-        <strong>Estimated Total</strong>
-        <strong id="cartTotal" style="color: var(--chili)">£0.00</strong>
-      </div>
-      <a
-        data-nav-link="pages/reserve.html"
-        href="pages/reserve.html"
-        class="btn-chili w-100 justify-content-center"
-        >Proceed to Checkout <i class="bi bi-arrow-right"></i
-      ></a>
-    </div>
-  </div>
-</div>
-
-<!-- Toast Notification -->
-<div class="toast-container">
-  <div
-    id="cartToast"
-    class="toast toast-cart align-items-center text-white border-0"
-    style="background: var(--basil)"
-    role="alert"
-  >
-    <div class="d-flex">
-      <div class="toast-body">
-        <i
-          class="bi bi-check-circle-fill me-2"
-          style="color: var(--mustard)"
-        ></i
-        ><span id="toastMsg">Added to your order!</span>
-      </div>
-      <button
-        type="button"
-        class="btn-close btn-close-white me-2 m-auto"
-        data-bs-dismiss="toast"
-        aria-label="Close"
-      ></button>
-    </div>
-  </div>
-</div>

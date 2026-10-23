@@ -392,7 +392,8 @@ img {
   height: 44px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(13%) sepia(90%) saturate(4000%) hue-rotate(345deg) brightness(90%) contrast(110%);
+  filter: brightness(0) saturate(100%) invert(13%) sepia(90%) saturate(4000%)
+    hue-rotate(345deg) brightness(90%) contrast(110%);
 }
 
 .brand-logo span {
@@ -2384,17 +2385,6 @@ footer p {
 .qv-qty span {
   padding: 0 16px;
   font-weight: 700;
-}
-
-.offcanvas-cart {
-  background: var(--cream);
-}
-
-.toast-container {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 1090;
 }
 
 @media (max-width: 767.98px) {
